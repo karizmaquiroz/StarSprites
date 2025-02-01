@@ -1,0 +1,60 @@
+using System.IO;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+    public GameObject MainMenuUI; 
+    public GameObject CreditUI;
+    public GameObject GameOverUI; //maybe??
+
+    public void Awake()
+    {
+        MainMenuUI.SetActive(true);
+
+    }
+
+    public void GameOver()
+    {
+        GameOverUI.SetActive(true);
+    }
+
+    public void restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //Debug.Log("Playing game / inside game);
+    }
+
+    public void mainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        //Debug.Log("In the MainMenu scene");
+    }
+
+    public void quit() //inside gameOver when pressed application quits
+    {
+        SceneManager.LoadScene("Credits");
+
+        Application.Quit();
+    }
+
+    public void startGame()
+    {
+        SceneManager.LoadScene(""); //put scene name of house not! level 1
+        //Debug.Log("The guidians house");
+    }
+
+    public void creditButton()
+    {
+        SceneManager.LoadScene("Credits");
+        //Debug.Log("In the credits scene");
+
+    }
+
+    public void creditBackButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+        //Debug.Log("Back in MainMenu scene");
+
+    }
+}
