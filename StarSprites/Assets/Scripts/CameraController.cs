@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
     {
         if (shouldMove)
         {
-            MainCamera.transform.position = Vector3.Lerp(transform.position, cameraSpots[0].transform.position, moveSpeed * Time.deltaTime);
+            MainCamera.transform.position = Vector3.Lerp(MainCamera.transform.position, cameraSpots[0].transform.position, moveSpeed * Time.deltaTime);
 
             // Stop moving if close enough to the target
             if (Vector3.Distance(MainCamera.transform.position, cameraSpots[0].transform.position) < 0.01f)
@@ -30,10 +30,11 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("CameraTrigger")) // Make sure the trigger has this tag
         {
+            Debug.Log("camera has moved");
             shouldMove = true;
         }
     }
