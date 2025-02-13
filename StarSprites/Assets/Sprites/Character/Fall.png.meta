@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bac7b79b1e5a3224781f6b5d216ac76a
+guid: 3f13cbbc5d7ec2a40b9934b6a4e4b5d3
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -8,9 +8,6 @@ TextureImporter:
   - first:
       213: -4678289630434317930
     second: Photo Feb 12 2025, 9 09 38 PM_1
-  - first:
-      213: 1690656861801063994
-    second: Photo Feb 12 2025, 9 09 38 PM_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,13 +49,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.7083333, y: 0.512294}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 2146, y: 540, z: 328, w: 331}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -102,32 +99,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -135,12 +106,12 @@ TextureImporter:
       name: Photo Feb 12 2025, 9 09 38 PM_0
       rect:
         serializedVersion: 2
-        x: 580
-        y: 351
-        width: 1441
-        height: 1849
+        x: 90
+        y: 1050
+        width: 24
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -157,12 +128,12 @@ TextureImporter:
       name: Photo Feb 12 2025, 9 09 38 PM_1
       rect:
         serializedVersion: 2
-        x: 2289
-        y: 1050
-        width: 24
-        height: 20
+        x: 133
+        y: 595
+        width: 1312
+        height: 1529
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,34 +146,12 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Photo Feb 12 2025, 9 09 38 PM_2
-      rect:
-        serializedVersion: 2
-        x: 2332
-        y: 595
-        width: 1329
-        height: 1613
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a36aab4557b667710800000000000000
-      internalID: 1690656861801063994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: da88166a5ef979d47a1dfa678dc5f824
-    internalID: -462721785
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -213,7 +162,6 @@ TextureImporter:
     nameFileIdTable:
       Photo Feb 12 2025, 9 09 38 PM_0: -3851777088714031501
       Photo Feb 12 2025, 9 09 38 PM_1: -4678289630434317930
-      Photo Feb 12 2025, 9 09 38 PM_2: 1690656861801063994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
