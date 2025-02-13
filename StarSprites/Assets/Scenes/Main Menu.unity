@@ -363,6 +363,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2824029791517857323, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1417.3293
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824029791517857323, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 426.9909
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824029791517857323, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.1224
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824029791517857323, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18.3705
+      objectReference: {fileID: 0}
     - target: {fileID: 6225546664133463049, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
       propertyPath: m_Name
       value: CreditsButton
