@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 26d1e46cca45a88408628fed1daf272f
+guid: bac7b79b1e5a3224781f6b5d216ac76a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8360473252158592019
-    second: Photo Feb 12 2025, 9 14 01 PM_0
+      213: -3851777088714031501
+    second: Photo Feb 12 2025, 9 09 38 PM_0
   - first:
-      213: -2977699378123112401
-    second: Photo Feb 12 2025, 9 14 01 PM_1
+      213: -4678289630434317930
+    second: Photo Feb 12 2025, 9 09 38 PM_1
   - first:
-      213: 3189808207477856833
-    second: Photo Feb 12 2025, 9 14 01 PM_2
+      213: 1690656861801063994
+    second: Photo Feb 12 2025, 9 09 38 PM_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,13 +52,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.7083333, y: 0.512294}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 2146, y: 540, z: 328, w: 331}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -132,67 +132,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Photo Feb 12 2025, 9 14 01 PM_0
+      name: Photo Feb 12 2025, 9 09 38 PM_0
       rect:
         serializedVersion: 2
-        x: 777
-        y: 634
-        width: 1285
-        height: 1524
+        x: 580
+        y: 351
+        width: 1441
+        height: 1849
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 314511d802e560470800000000000000
-      internalID: 8360473252158592019
+      spriteID: 37e3639352dbb8ac0800000000000000
+      internalID: -3851777088714031501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Photo Feb 12 2025, 9 14 01 PM_1
+      name: Photo Feb 12 2025, 9 09 38 PM_1
       rect:
         serializedVersion: 2
-        x: 1381
-        y: 2130
-        width: 77
-        height: 70
+        x: 2289
+        y: 1050
+        width: 24
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f20021f21361da6d0800000000000000
-      internalID: -2977699378123112401
+      spriteID: 699a1952e50631fb0800000000000000
+      internalID: -4678289630434317930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Photo Feb 12 2025, 9 14 01 PM_2
+      name: Photo Feb 12 2025, 9 09 38 PM_2
       rect:
         serializedVersion: 2
-        x: 2271
-        y: 593
-        width: 1301
-        height: 1638
+        x: 2332
+        y: 595
+        width: 1329
+        height: 1613
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14ad7541aa9744c20800000000000000
-      internalID: 3189808207477856833
+      spriteID: a36aab4557b667710800000000000000
+      internalID: 1690656861801063994
       vertices: []
       indices: 
       edges: []
@@ -201,8 +201,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: da88166a5ef979d47a1dfa678dc5f824
+    internalID: -462721785
     vertices: []
     indices: 
     edges: []
@@ -210,7 +210,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Photo Feb 12 2025, 9 09 38 PM_0: -3851777088714031501
+      Photo Feb 12 2025, 9 09 38 PM_1: -4678289630434317930
+      Photo Feb 12 2025, 9 09 38 PM_2: 1690656861801063994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
