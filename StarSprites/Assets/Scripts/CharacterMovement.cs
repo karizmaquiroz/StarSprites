@@ -43,6 +43,7 @@ public class CharacterMovement : MonoBehaviour
         if (isGrounded)
         {
             jumpCount = 0;
+            animator.SetTrigger("isGrounded");
         }
 
         if (Input.GetButtonDown("Jump") && jumpCount < maxJumps)
@@ -50,7 +51,6 @@ public class CharacterMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpCount++;
             animator.SetTrigger("jumping");
-
         }
     }
  }
