@@ -4,7 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject MainMenuUI; 
+    public GameObject GameScreen0; //guardian sprites house
+    public GameObject GameScreen1; //
+    public GameObject GameScreen2;
+    public GameObject GameScreen3;
+    public GameObject MainMenuUI; //game start screen
     public GameObject CreditUI;
     public GameObject GameOverUI; //maybe??
 
@@ -48,6 +52,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
         //Debug.Log("In the credits scene");
+
+
+
 
     }
 
