@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9dcaee87304d2c24d9cf0c119d1c52ea
+guid: 2b377f700b22b694cb056e8b6364c6fc
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -99,32 +99,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -132,12 +106,12 @@ TextureImporter:
       name: Photo Feb 12 2025, 9 11 16 PM_0
       rect:
         serializedVersion: 2
-        x: 694
-        y: 672
-        width: 1379
-        height: 1645
+        x: 133
+        y: 116
+        width: 1358
+        height: 1517
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -154,12 +128,12 @@ TextureImporter:
       name: Photo Feb 12 2025, 9 11 16 PM_1
       rect:
         serializedVersion: 2
-        x: 1417
-        y: 2204
+        x: 849
+        y: 1606
         width: 74
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -176,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f72d3ddd11ed6404c91af6b4f1b62fc0
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 

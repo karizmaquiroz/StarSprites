@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerWalk
+  m_Name: fall
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1648006089, guid: 26d1e46cca45a88408628fed1daf272f, type: 3}
-    - time: 0.083333336
-      value: {fileID: -517939207, guid: 26d1e46cca45a88408628fed1daf272f, type: 3}
+      value: {fileID: -4678289630434317930, guid: 3f13cbbc5d7ec2a40b9934b6a4e4b5d3, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,14 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1648006089, guid: 26d1e46cca45a88408628fed1daf272f, type: 3}
-    - {fileID: -517939207, guid: 26d1e46cca45a88408628fed1daf272f, type: 3}
+    - {fileID: -4678289630434317930, guid: 3f13cbbc5d7ec2a40b9934b6a4e4b5d3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 0.083333336
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

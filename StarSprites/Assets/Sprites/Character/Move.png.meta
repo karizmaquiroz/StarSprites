@@ -132,67 +132,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Photo Feb 12 2025, 9 14 01 PM_0
+      name: Move_0
       rect:
         serializedVersion: 2
-        x: 777
+        x: 782
         y: 634
         width: 1285
-        height: 1524
+        height: 1580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 314511d802e560470800000000000000
-      internalID: 8360473252158592019
+      spriteID: 53143f6574edb984eb5195ef77ded450
+      internalID: -1648006089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Photo Feb 12 2025, 9 14 01 PM_1
+      name: Move_2
       rect:
         serializedVersion: 2
-        x: 1381
-        y: 2130
-        width: 77
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f20021f21361da6d0800000000000000
-      internalID: -2977699378123112401
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Photo Feb 12 2025, 9 14 01 PM_2
-      rect:
-        serializedVersion: 2
-        x: 2271
-        y: 593
-        width: 1301
+        x: 2276
+        y: 591
+        width: 1299
         height: 1638
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 14ad7541aa9744c20800000000000000
-      internalID: 3189808207477856833
+      spriteID: a70cba6eebda7744cb732ecf9d161766
+      internalID: -517939207
       vertices: []
       indices: 
       edges: []
@@ -201,7 +179,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6a982d8048cee3c45a308a9d7ed85263
     internalID: 0
     vertices: []
     indices: 
@@ -211,9 +189,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Photo Feb 12 2025, 9 14 01 PM_0: 8360473252158592019
-      Photo Feb 12 2025, 9 14 01 PM_1: -2977699378123112401
-      Photo Feb 12 2025, 9 14 01 PM_2: 3189808207477856833
+      Move_0: -1648006089
+      Move_1: 1592594396
+      Move_2: -517939207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

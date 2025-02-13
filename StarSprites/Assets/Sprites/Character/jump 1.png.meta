@@ -46,17 +46,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 301, z: 0, w: 428}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -108,7 +108,7 @@ TextureImporter:
         width: 1361
         height: 1747
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -121,12 +121,29 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    outline: []
+    outline:
+    - - {x: -131, y: -952.5}
+      - {x: -114, y: -886.5}
+      - {x: 104, y: -995.5}
+      - {x: 336.7843, y: -953.2295}
+      - {x: 674.22516, y: -677.50195}
+      - {x: 674.22516, y: 320.36914}
+      - {x: 670.28613, y: 347.9419}
+      - {x: 133.26942, y: 796.9839}
+      - {x: -233.05737, y: 796.9839}
+      - {x: -636.14813, y: 491.05762}
+      - {x: -691.2941, y: 152.30664}
+      - {x: -810, y: -600.5}
+      - {x: -384, y: -1044.5}
+      - {x: -206, y: -963.5}
+    - - {x: 251.43936, y: -519.94336}
+      - {x: 251.43936, y: -518.6304}
+      - {x: 253.6277, y: -518.6304}
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -134,7 +151,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jump 1_0: 2251879231025388370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
