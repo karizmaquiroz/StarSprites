@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: bb01386366784584c8061028e6e69bd9
+guid: 544ecea591d6c0a4e8ff8d3a16ef26d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1146679928723894485
-    second: Photo Feb 12 2025, 10 20 06 AM_0
+      213: -3851777088714031501
+    second: Photo Feb 12 2025, 9 09 38 PM_0
+  - first:
+      213: -4678289630434317930
+    second: Photo Feb 12 2025, 9 09 38 PM_1
+  - first:
+      213: 1690656861801063994
+    second: Photo Feb 12 2025, 9 09 38 PM_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Photo Feb 12 2025, 10 20 06 AM_0
+      name: Photo Feb 12 2025, 9 09 38 PM_0
       rect:
         serializedVersion: 2
-        x: 453
-        y: 1901
-        width: 479
-        height: 974
+        x: 613
+        y: 393
+        width: 1361
+        height: 1747
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2f87512eac2610f0800000000000000
-      internalID: -1146679928723894485
+      spriteID: 37e3639352dbb8ac0800000000000000
+      internalID: -3851777088714031501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo Feb 12 2025, 9 09 38 PM_1
+      rect:
+        serializedVersion: 2
+        x: 2289
+        y: 1050
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 699a1952e50631fb0800000000000000
+      internalID: -4678289630434317930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Photo Feb 12 2025, 9 09 38 PM_2
+      rect:
+        serializedVersion: 2
+        x: 2332
+        y: 595
+        width: 1312
+        height: 1529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a36aab4557b667710800000000000000
+      internalID: 1690656861801063994
       vertices: []
       indices: 
       edges: []
@@ -160,8 +210,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Photo Feb 12 2025, 10 20 06 AM_0: -1146679928723894485
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
