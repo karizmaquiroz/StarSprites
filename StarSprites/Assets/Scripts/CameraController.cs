@@ -4,27 +4,38 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public List<GameObject> cameraSpots = new List<GameObject>();// Position to move to when triggered
+    [System.Serializable]
+    public class CameraTrigger
+    {
+        public GameObject trigger;  // The trigger GameObject
+        public GameObject cameraSpot; // The target camera spot for this trigger
+    }
+
+    public List<CameraTrigger> cameraTriggers = new List<CameraTrigger>(); // List of trigger and spot pairs
     public Camera MainCamera;
-    public float moveSpeed = 2.0f; // Speed of the camera movement
-    private bool shouldMove = false;
+    public float moveSpeed = 2.0f;
     private Vector3 originalCameraPosition;
+    private Vector3 targetPosition;
+    private bool shouldMove = false;
 
     private void Start()
     {
-        originalCameraPosition = MainCamera.transform.position - transform.position;
+        // Store the camera's initial position
+        originalCameraPosition = MainCamera.transform.position;
+        targetPosition = originalCameraPosition;
     }
 
-    void Update()
+    private void Update()
     {
         if (shouldMove)
         {
-            MainCamera.transform.position = Vector3.Lerp(MainCamera.transform.position, cameraSpots[0].transform.position, moveSpeed * Time.deltaTime);
+            // Smoothly move the camera towards the target position
+            MainCamera.transform.position = Vector3.Lerp(MainCamera.transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
             // Stop moving if close enough to the target
-            if (Vector3.Distance(MainCamera.transform.position, cameraSpots[0].transform.position) < 0.01f)
+            if (Vector3.Distance(MainCamera.transform.position, targetPosition) < 0.01f)
             {
-                MainCamera.transform.position = cameraSpots[0].transform.position;
+                MainCamera.transform.position = targetPosition;
                 shouldMove = false;
             }
         }
@@ -32,10 +43,26 @@ public class CameraController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("CameraTrigger")) // Make sure the trigger has this tag
+        // Check each trigger in the list
+        foreach (CameraTrigger cameraTrigger in cameraTriggers)
         {
-            Debug.Log("camera has moved");
-            shouldMove = true;
+            // If the player enters a trigger associated with this camera spot
+            if (other.gameObject == cameraTrigger.trigger)
+            {
+                // If the camera is already at the target spot, move it back to the original position
+                if (targetPosition == cameraTrigger.cameraSpot.transform.position)
+                {
+                    targetPosition = originalCameraPosition;
+                }
+                else
+                {
+                    // Otherwise, move the camera to the corresponding spot
+                    targetPosition = cameraTrigger.cameraSpot.transform.position;
+                }
+                shouldMove = true;
+                Debug.Log($"Camera is moving to: {targetPosition}");
+                break;
+            }
         }
     }
 }
