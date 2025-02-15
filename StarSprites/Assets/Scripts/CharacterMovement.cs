@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
@@ -5,7 +6,7 @@ public class CharacterMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public Transform groundCheck;
-    public LayerMask groundLayer;
+    public List<LayerMask> groundLayers = new List<LayerMask>();
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -38,11 +39,23 @@ public class CharacterMovement : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[0]) || Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[1]))
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
 
+        Debug.Log(isGrounded);
         if (isGrounded)
         {
             jumpCount = 0;
+        }
+
+        if (rb.linearVelocityY == 0 && isGrounded)
+        {
             animator.SetTrigger("isGrounded");
         }
 
@@ -50,7 +63,16 @@ public class CharacterMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpCount++;
+            Debug.Log(jumpCount);
             animator.SetTrigger("jumping");
         }
+        if (rb.linearVelocity.y > 0)
+        {
+            rb.gravityScale = 2f;
+        }
+        else
+        {
+            rb.gravityScale = 4f;
+        }
     }
- }
+}
