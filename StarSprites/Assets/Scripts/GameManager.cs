@@ -1,6 +1,11 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -31,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     public void mainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
         //Debug.Log("In the MainMenu scene");
     }
 
@@ -44,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene(""); //put scene name of house not! level 1
+        SceneManager.LoadScene("Level1"); //put scene name of house Game level 0! not level 1!!
         //Debug.Log("The guidians house");
     }
 
@@ -60,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void creditBackButton()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
         //Debug.Log("Back in MainMenu scene");
 
     }

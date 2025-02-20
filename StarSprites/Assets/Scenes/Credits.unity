@@ -343,6 +343,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3943658196941778520, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_text
+      value: Lisbeth
+      objectReference: {fileID: 0}
     - target: {fileID: 3947121519637611406, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
       propertyPath: m_Name
       value: CreditsCanvas
@@ -427,11 +431,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6120808499665532661, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7978686817197719258, guid: e0578abcf9cf4ec46a41292ecc7b8f17, type: 3}
+    - target: {fileID: 6120808499665532661, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: creditBackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120808499665532661, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120808499665532661, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160493663007128907, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_text
+      value: Karizma Quiroz
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516016418533004557, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_text
+      value: Lauren
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3947121519637611406, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 114430725268623575}
   m_SourcePrefab: {fileID: 100100000, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+--- !u!1 &114430725268623574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3947121519637611406, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+  m_PrefabInstance: {fileID: 114430725268623573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &114430725268623575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114430725268623574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b1ce6ef06cabf43bf48dd27fa201a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameScreen0: {fileID: 0}
+  GameScreen1: {fileID: 0}
+  GameScreen2: {fileID: 0}
+  GameScreen3: {fileID: 0}
+  MainMenuUI: {fileID: 2248980477205494601, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+  CreditUI: {fileID: 3947121519637611406, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+  GameOverUI: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
