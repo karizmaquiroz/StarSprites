@@ -10,7 +10,7 @@ public class CameraBezierCurve : MonoBehaviour
     private float tParam;
 
     public Camera MainCamera;
-    private Vector3 cameraPos;
+    private Vector2 cameraPos;
 
     private float speedModifier;
 
