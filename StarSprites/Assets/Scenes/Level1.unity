@@ -4086,7 +4086,11 @@ BoxCollider2D:
   m_Size: {x: 2.7303483, y: 4.09}
   m_EdgeRadius: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &2028991055
+=======
+--- !u!1 &2138107509
+>>>>>>> Stashed changes
 =======
 --- !u!1 &2138107509
 >>>>>>> Stashed changes
@@ -4098,14 +4102,20 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - component: {fileID: 2028991056}
   m_Layer: 0
   m_Name: TeleportSpot
 =======
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 2138107511}
   - component: {fileID: 2138107510}
   m_Layer: 0
   m_Name: backgrounfd_0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4113,8 +4123,11 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!4 &2028991056
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!212 &2138107510
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4171,12 +4184,16 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2138107511
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_GameObject: {fileID: 2028991055}
   serializedVersion: 2
@@ -4428,6 +4445,8 @@ BoxCollider2D:
   m_Size: {x: 4.7906113, y: 5.7}
   m_EdgeRadius: 0
 =======
+=======
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 2138107509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4437,6 +4456,9 @@ BoxCollider2D:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1001 &2413854547983354674
 PrefabInstance:
@@ -4736,7 +4758,11 @@ SceneRoots:
   - {fileID: 1449349967}
   - {fileID: 1661284972}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 1827278838}
+=======
+  - {fileID: 2138107511}
+>>>>>>> Stashed changes
 =======
   - {fileID: 2138107511}
 >>>>>>> Stashed changes
