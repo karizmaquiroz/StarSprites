@@ -21,7 +21,7 @@ public class PlayerShoot : MonoBehaviour
         if (rb != null)
         {
             rb.linearVelocity = projectile.transform.right * projectileSpeed;
-            Destroy(projectile, 10f);
+            Destroy(projectile, 5f);
         }
     }
 }

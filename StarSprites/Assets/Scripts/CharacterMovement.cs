@@ -8,10 +8,16 @@ public class CharacterMovement : MonoBehaviour
     public Transform groundCheck;
     public List<LayerMask> groundLayers = new List<LayerMask>();
 
+    public GameObject projectilePrefab;
+    public Transform firePoint;
+    public float projectileSpeed = 10f;
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private int jumpCount = 0;
     private int maxJumps = 2;
+    public GameObject shotpoint;
+    public bool isFacingRight;
 
    //animator (lis)
     Animator animator;
@@ -33,10 +39,14 @@ public class CharacterMovement : MonoBehaviour
         if (moveInput > 0)
         {
             spriteRenderer.flipX = true;
+            shotpoint.transform.localPosition = new Vector3(9.4f, 0f, 0f);
+            isFacingRight = true;
         }
         else if (moveInput < 0)
         {
             spriteRenderer.flipX = false;
+            shotpoint.transform.localPosition = new Vector3(-9.4f, 0f, 0f);
+            isFacingRight = false;
         }
 
         if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[0]) || Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[1]))
@@ -73,6 +83,27 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             rb.gravityScale = 4f;
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+    }
+    void Shoot()
+    {
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            if (isFacingRight)
+            {
+                rb.linearVelocity = new Vector2(projectileSpeed, 0f);
+            }
+            else
+            {
+                rb.linearVelocity = new Vector2(-projectileSpeed, 0f);
+            }
+                Destroy(projectile, 5f);
         }
     }
 }
