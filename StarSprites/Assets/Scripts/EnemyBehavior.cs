@@ -16,8 +16,10 @@ public class EnemyBehavior : MonoBehaviour
     private bool movingToA = true;
 
     private Rigidbody2D rb;
-    private Animator animator;
 
+    //animator (lis)
+    Animator animator;
+    SpriteRenderer spriteRenderer;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -78,6 +80,8 @@ public class EnemyBehavior : MonoBehaviour
     {
         // Play attack animation if using Animator
         Debug.Log("Enemy Attacks!");
+        animator.SetTrigger("playerContact");
+
     }
 
     public void TakeDamage()
