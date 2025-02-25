@@ -41,12 +41,14 @@ public class CharacterMovement : MonoBehaviour
             spriteRenderer.flipX = true;
             shotpoint.transform.localPosition = new Vector3(9.4f, 0f, 0f);
             isFacingRight = true;
+            //add SOundEffectManager.Play("PlayerMovement");
         }
         else if (moveInput < 0)
         {
             spriteRenderer.flipX = false;
             shotpoint.transform.localPosition = new Vector3(-9.4f, 0f, 0f);
             isFacingRight = false;
+            //add SOundEffectManager.Play("PlayerMovement");
         }
 
         if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[0]) || Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[1]))
