@@ -106,20 +106,20 @@ TextureImporter:
       name: bearbite_0
       rect:
         serializedVersion: 2
-        x: 134
-        y: 517
-        width: 412
-        height: 315
+        x: 135
+        y: 518
+        width: 410
+        height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b48f770232f433060800000000000000
-      internalID: 6931971263740508235
+      spriteID: 5098149fb8ff707409f1c44b2541af1c
+      internalID: -927245960
       vertices: []
       indices: 
       edges: []
@@ -128,20 +128,20 @@ TextureImporter:
       name: bearbite_1
       rect:
         serializedVersion: 2
-        x: 767
-        y: 518
-        width: 411
-        height: 294
+        x: 768
+        y: 519
+        width: 409
+        height: 292
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e54df1dff4814a870800000000000000
-      internalID: 8693099912560104542
+      spriteID: b8a478ba1e253f24f8ccb9330b2ab8a1
+      internalID: 1729131893
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 46ca1c9108e7f4d47b400dbd7aef31c2
     internalID: 0
     vertices: []
     indices: 
@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bearbite_0: -927245960
+      bearbite_1: 1729131893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
