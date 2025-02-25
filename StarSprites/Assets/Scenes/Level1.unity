@@ -2290,7 +2290,6 @@ GameObject:
   - component: {fileID: 1012559885}
   - component: {fileID: 1012559886}
   - component: {fileID: 1012559887}
-  - component: {fileID: 1012559888}
   m_Layer: 0
   m_Name: dust
   m_TagString: Player
@@ -2412,7 +2411,11 @@ MonoBehaviour:
     m_Bits: 8
   - serializedVersion: 2
     m_Bits: 64
+  projectilePrefab: {fileID: 5180379506700079987, guid: 568a79e40b21c2c42847d20d9a9bd569, type: 3}
+  firePoint: {fileID: 1909758632}
+  projectileSpeed: 20
   shotpoint: {fileID: 1909758631}
+  isFacingRight: 0
 --- !u!50 &1012559884
 Rigidbody2D:
   serializedVersion: 5
@@ -2531,21 +2534,6 @@ MonoBehaviour:
     cameraSpot: {fileID: 2028991055}
   MainCamera: {fileID: 824556511}
   moveSpeed: 2
---- !u!114 &1012559888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012559879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc82185eec1ca8b4596301a0ccecd805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5180379506700079987, guid: 568a79e40b21c2c42847d20d9a9bd569, type: 3}
-  firePoint: {fileID: 1909758632}
-  projectileSpeed: 10
 --- !u!1 &1018491175
 GameObject:
   m_ObjectHideFlags: 0

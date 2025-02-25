@@ -8,6 +8,10 @@ public class CharacterMovement : MonoBehaviour
     public Transform groundCheck;
     public List<LayerMask> groundLayers = new List<LayerMask>();
 
+    public GameObject projectilePrefab;
+    public Transform firePoint;
+    public float projectileSpeed = 10f;
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private int jumpCount = 0;
@@ -79,6 +83,27 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             rb.gravityScale = 4f;
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+    }
+    void Shoot()
+    {
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            if (isFacingRight)
+            {
+                rb.linearVelocity = new Vector2(projectileSpeed, 0f);
+            }
+            else
+            {
+                rb.linearVelocity = new Vector2(-projectileSpeed, 0f);
+            }
+                Destroy(projectile, 5f);
         }
     }
 }
