@@ -50,8 +50,9 @@ public class CameraBezierCurve : MonoBehaviour
                 3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 +
                 Mathf.Pow(tParam, 3) * p3;
 
-
+            //transform.position = cameraPos;
             MainCamera.transform.position = cameraPos;
+
             yield return new WaitForEndOfFrame();
 
         }

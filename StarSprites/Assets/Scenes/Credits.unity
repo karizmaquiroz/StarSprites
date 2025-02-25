@@ -451,9 +451,25 @@ PrefabInstance:
       propertyPath: m_text
       value: Karizma Quiroz
       objectReference: {fileID: 0}
+    - target: {fileID: 7263082002016286288, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_Name
+      value: Name 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7516016418533004557, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
       propertyPath: m_text
       value: Lauren
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992514901110546360, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_text
+      value: '8Bit Music- Main Menu '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992514901110546360, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_margin.z
+      value: -139.54248
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992514901110546360, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
