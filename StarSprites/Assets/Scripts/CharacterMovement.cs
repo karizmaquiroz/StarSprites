@@ -12,6 +12,7 @@ public class CharacterMovement : MonoBehaviour
     private bool isGrounded;
     private int jumpCount = 0;
     private int maxJumps = 2;
+    public GameObject shotpoint;
 
    //animator (lis)
     Animator animator;
@@ -33,10 +34,12 @@ public class CharacterMovement : MonoBehaviour
         if (moveInput > 0)
         {
             spriteRenderer.flipX = true;
+            shotpoint.transform.localPosition = new Vector3(9.4f, 0f, 0f);
         }
         else if (moveInput < 0)
         {
             spriteRenderer.flipX = false;
+            shotpoint.transform.localPosition = new Vector3(-9.4f, 0f, 0f);
         }
 
         if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[0]) || Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[1]))
