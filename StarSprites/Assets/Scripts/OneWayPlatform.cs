@@ -3,12 +3,14 @@ using UnityEngine;
 public class OneWayPlatform : MonoBehaviour
 {
     private Collider2D playerCollider;
-    [SerializeField] private LayerMask platformLayer;
-    [SerializeField] private float dropDuration = 0.2f;
+    private int platformLayer;
+    public Transform GroundCheck;
+    [SerializeField] private float dropDuration = 1f;
 
     private void Start()
     {
         playerCollider = GetComponent<Collider2D>();
+        platformLayer = LayerMask.NameToLayer("Platform");
     }
 
     private void Update()
@@ -22,10 +24,15 @@ public class OneWayPlatform : MonoBehaviour
 
     private System.Collections.IEnumerator DropThroughPlatform()
     {
+        Debug.Log(gameObject.layer);
+        Debug.Log(platformLayer);
+        Debug.Log("Falling through");
         // Disable collision temporarily
-        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Platform"), true);
+        RaycastHit2D hit = Physics2D.Raycast(GroundCheck.position, Vector2.down, 1f, 1 << platformLayer);
+        Collider2D platformCollider = hit.collider;
+        platformCollider.enabled = false;
         yield return new WaitForSeconds(dropDuration);
         // Re-enable collision
-        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Platform"), false);
+        platformCollider.enabled = true;
     }
 }

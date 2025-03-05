@@ -96,6 +96,7 @@ public class EnemyBehavior : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy Died!");
+        XPBarBehavior.Instance.GainXP(25);
         Destroy(gameObject);
     }
 

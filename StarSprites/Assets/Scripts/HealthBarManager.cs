@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class HealthBarManager : MonoBehaviour
 {
+    public static HealthBarManager Instance;
+
     public Image[] hearts;  // Assign in Inspector
     public Sprite fullHeart;
     public Sprite emptyHeart;
@@ -13,6 +15,19 @@ public class HealthBarManager : MonoBehaviour
     private int maxHealth = 100;
     private int heartsRemaining;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Keeps it alive across scenes
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         heartsRemaining = hearts.Length;
@@ -21,7 +36,7 @@ public class HealthBarManager : MonoBehaviour
         UpdateHearts();
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if (heartsRemaining <= 0) return;
         
@@ -56,13 +71,4 @@ public class HealthBarManager : MonoBehaviour
             hearts[i].sprite = (i < heartsRemaining) ? fullHeart : emptyHeart;
        }
     }
-    
-    void CollisionEnter2D(Collision other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            TakeDamage(25);
-        }
-    }
-    
 }

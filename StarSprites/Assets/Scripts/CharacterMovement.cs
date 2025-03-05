@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -106,6 +107,13 @@ public class CharacterMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(-projectileSpeed, 0f);
             }
                 Destroy(projectile, 5f);
+        }
+    }
+    void CollisionEnter2D(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            HealthBarManager.Instance.TakeDamage(25);
         }
     }
 }

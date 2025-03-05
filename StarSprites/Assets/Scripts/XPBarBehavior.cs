@@ -3,10 +3,25 @@ using UnityEngine.UI;
 
 public class XPBarBehavior : MonoBehaviour
 {
+    public static XPBarBehavior Instance;
+
     public Slider xpSlider;
     public int currentXP = 0;
     public int maxXP = 100;
     public int level = 1;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Keeps it alive across scenes
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
