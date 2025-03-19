@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -60,8 +61,7 @@ public class CharacterMovement : MonoBehaviour
         {
             isGrounded = false;
         }
-
-        Debug.Log(isGrounded);
+        
         if (isGrounded)
         {
             jumpCount = 0;
@@ -76,7 +76,6 @@ public class CharacterMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpCount++;
-            Debug.Log(jumpCount);
             animator.SetTrigger("jumping");
         }
         if (rb.linearVelocity.y > 0)
@@ -92,6 +91,21 @@ public class CharacterMovement : MonoBehaviour
             Shoot();
         }
     }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            StartCoroutine(TakeDamageAfterDelay(1f));
+        }
+    }
+    IEnumerator TakeDamageAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Debug.Log("Taking damage now!");
+        HealthBarManager.Instance.TakeDamage(25);
+    }
+    
     void Shoot()
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
@@ -107,13 +121,6 @@ public class CharacterMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(-projectileSpeed, 0f);
             }
                 Destroy(projectile, 5f);
-        }
-    }
-    void CollisionEnter2D(Collision other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            HealthBarManager.Instance.TakeDamage(25);
         }
     }
 }

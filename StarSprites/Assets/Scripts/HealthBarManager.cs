@@ -32,7 +32,7 @@ public class HealthBarManager : MonoBehaviour
     {
         heartsRemaining = hearts.Length;
         healthBar.maxValue = maxHealth;
-        healthBar.value = health; // Start with full health
+        healthBar.value = maxHealth; // Start with full health
         UpdateHearts();
     }
 
@@ -47,6 +47,7 @@ public class HealthBarManager : MonoBehaviour
         {
             RemoveHeart();
         }
+        Debug.Log(healthBar.value);
     }
     
     void RemoveHeart()
