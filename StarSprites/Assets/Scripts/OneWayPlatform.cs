@@ -30,6 +30,10 @@ public class OneWayPlatform : MonoBehaviour
         // Disable collision temporarily
         RaycastHit2D hit = Physics2D.Raycast(GroundCheck.position, Vector2.down, 1f, 1 << platformLayer);
         Collider2D platformCollider = hit.collider;
+        if (platformCollider == null)
+        {
+            yield break;
+        }
         platformCollider.enabled = false;
         yield return new WaitForSeconds(dropDuration);
         // Re-enable collision

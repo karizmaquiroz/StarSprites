@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyBehavior : MonoBehaviour
+public class BossOneScript : MonoBehaviour
 {
     public float patrolSpeed = 10f;
     public float chaseSpeed = 15f;
@@ -20,13 +20,9 @@ public class EnemyBehavior : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    //animator (lis)
-    Animator animator;
-    SpriteRenderer spriteRenderer;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         targetPoint = pointA.position;
         currentHealth = maxHealth;
@@ -118,7 +114,6 @@ public class EnemyBehavior : MonoBehaviour
         {
             // Play attack animation if using Animator
             Debug.Log("Enemy Attacks!");
-            animator.SetTrigger("playerContact");
 
             // Reset the cooldown timer
             attackCooldownTimer = attackCooldown;

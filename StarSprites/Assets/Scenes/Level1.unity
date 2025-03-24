@@ -1387,6 +1387,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1146827353}
+    - target: {fileID: 1664621608767274952, guid: 3036c1fc9af49d5408fca100f4ff678c, type: 3}
+      propertyPath: detectionRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3220349853913015256, guid: 3036c1fc9af49d5408fca100f4ff678c, type: 3}
       propertyPath: m_Name
       value: BearEnemy (1)
@@ -3863,6 +3867,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 923183025}
+    - target: {fileID: 1664621608767274952, guid: 3036c1fc9af49d5408fca100f4ff678c, type: 3}
+      propertyPath: detectionRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3220349853913015256, guid: 3036c1fc9af49d5408fca100f4ff678c, type: 3}
       propertyPath: m_Name
       value: BearEnemy (2)
@@ -4183,6 +4191,10 @@ PrefabInstance:
     - target: {fileID: 422632942594394169, guid: d3ec41108c5cc374f86a9cbab50536c0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 794514906577188012, guid: d3ec41108c5cc374f86a9cbab50536c0, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.333
       objectReference: {fileID: 0}
     - target: {fileID: 1250687899574499638, guid: d3ec41108c5cc374f86a9cbab50536c0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6071,6 +6083,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1309215398}
+    - target: {fileID: 1664621608767274952, guid: 3036c1fc9af49d5408fca100f4ff678c, type: 3}
+      propertyPath: detectionRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3220349853913015256, guid: 3036c1fc9af49d5408fca100f4ff678c, type: 3}
       propertyPath: m_Name
       value: BearEnemy
