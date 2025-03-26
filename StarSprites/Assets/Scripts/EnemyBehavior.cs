@@ -16,7 +16,7 @@ public class EnemyBehavior : MonoBehaviour
     private bool isChasing = false;
     private bool movingToA = true;
     private float attackCooldownTimer = 0f;
-    private bool facingRight = true; // Track the initial facing direction
+    private bool facingRight; // Track the initial facing direction
 
     private Rigidbody2D rb;
 
@@ -30,6 +30,16 @@ public class EnemyBehavior : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         targetPoint = pointA.position;
         currentHealth = maxHealth;
+        if (transform.localScale.x < 0)
+        {
+            facingRight = false;
+            Flip();
+        }
+        else
+        {
+            facingRight = true;
+            Flip();
+        }
     }
 
     void Update()
@@ -66,7 +76,8 @@ public class EnemyBehavior : MonoBehaviour
         {
             attackCooldownTimer -= Time.deltaTime;
         }
-        if (transform.localScale.x > 0)
+        
+        if (transform.localScale.x < 0)
         {
             facingRight = false;
         }
@@ -74,6 +85,7 @@ public class EnemyBehavior : MonoBehaviour
         {
             facingRight = true;
         }
+
     }
 
     void Patrol()
@@ -81,11 +93,12 @@ public class EnemyBehavior : MonoBehaviour
         float step = patrolSpeed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, targetPoint, step);
 
-        if (Vector2.Distance(transform.position, targetPoint) < 0.1f)
+        if (Vector2.Distance(transform.position, targetPoint) < 1f)
         {
+            Debug.Log("Moving to next patrol point!");
             movingToA = !movingToA;
             targetPoint = movingToA ? pointA.position : pointB.position;
-            Flip();
+            Flip(); // Flip when changing patrol direction
         }
     }
 
@@ -94,11 +107,10 @@ public class EnemyBehavior : MonoBehaviour
         float step = chaseSpeed * Time.deltaTime;
         Vector3 newPosition = Vector2.MoveTowards(transform.position, player.position, step);
 
-        // Flip the bear to face the direction it is moving
-        if ((newPosition.x < transform.position.x && facingRight) ||
-            (newPosition.x > transform.position.x && !facingRight))
+        // Flip the sprite to face the player's direction
+        if ((player.position.x < transform.position.x && facingRight) ||
+            (player.position.x > transform.position.x && !facingRight))
         {
-            Debug.Log("Flipping bear to face direction: " + (newPosition.x < transform.position.x ? "left" : "right"));
             Flip();
         }
 
@@ -110,6 +122,7 @@ public class EnemyBehavior : MonoBehaviour
             Attack();
         }
     }
+
 
     void Attack()
     {
@@ -143,12 +156,20 @@ public class EnemyBehavior : MonoBehaviour
 
     void Flip()
     {
-        facingRight = !facingRight;
         Vector3 scale = transform.localScale;
-        scale.x *= -1;
+        if (facingRight)
+        {
+            scale.x = -3;
+        }
+        else
+        {
+            scale.x = 3; // Flip the sprite horizontally
+        }
+
         transform.localScale = scale;
-        Debug.Log("Bear flipped. New scale: " + transform.localScale);
+        Debug.Log("Enemy flipped. New scale: " + transform.localScale);
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
