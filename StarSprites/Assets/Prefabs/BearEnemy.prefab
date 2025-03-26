@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b8505cc9b56cdcb429627f98a9ba2458, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
   chaseSpeed: 4
   detectionRange: 5
   attackRange: 1
+  attackCooldown: 2
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   maxHealth: 3
