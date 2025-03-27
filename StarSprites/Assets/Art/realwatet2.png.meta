@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 791069ed21fcc984b90bd61b3d9f6897
+guid: 30b3c07b5d86b5248991aa8799559e3a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4866724631329722585
-    second: Photo Feb 12 2025, 10 11 53 AM_0
+      213: -8024190773893025788
+    second: realwatet2_0
   - first:
-      213: -416665003865731336
-    second: Photo Feb 12 2025, 10 11 53 AM_1
+      213: -616354772040215330
+    second: realwatet2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,43 +99,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Photo Feb 12 2025, 10 11 53 AM_0
+      name: realwatet2_0
       rect:
         serializedVersion: 2
-        x: 453
-        y: 2421
-        width: 1466
-        height: 274
+        x: 894
+        y: 1377
+        width: 259
+        height: 1509
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d05d0664441a8340800000000000000
-      internalID: 4866724631329722585
+      spriteID: 400b320510954a090800000000000000
+      internalID: -8024190773893025788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Photo Feb 12 2025, 10 11 53 AM_1
+      name: realwatet2_1
       rect:
         serializedVersion: 2
-        x: 1930
-        y: 2574
-        width: 142
-        height: 69
+        x: 1237
+        y: 1241
+        width: 350
+        height: 1643
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8fe0f36f265b73af0800000000000000
-      internalID: -416665003865731336
+      spriteID: ed41de4b9944277f0800000000000000
+      internalID: -616354772040215330
       vertices: []
       indices: 
       edges: []
@@ -186,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Photo Feb 12 2025, 10 11 53 AM_0: 4866724631329722585
-      Photo Feb 12 2025, 10 11 53 AM_1: -416665003865731336
+      realwatet2_0: -8024190773893025788
+      realwatet2_1: -616354772040215330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
