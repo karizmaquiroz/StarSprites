@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b8505cc9b56cdcb429627f98a9ba2458, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 2262172143567460085, guid: 6f68762c5a52fe3458acc0540ba85e4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 4.12, y: 3.15}
@@ -107,6 +107,7 @@ MonoBehaviour:
   chaseSpeed: 4
   detectionRange: 5
   attackRange: 1
+  attackCooldown: 2
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   maxHealth: 3
