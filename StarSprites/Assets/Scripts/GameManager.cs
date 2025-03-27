@@ -49,8 +49,8 @@ public class GameManager : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene("Level1"); //put scene name of house Game level 0! not level 1!!
-        //Debug.Log("The guidians house");
+        SceneManager.LoadScene("Level1"); 
+        
     }
 
     public void creditButton()

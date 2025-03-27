@@ -639,6 +639,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreditsButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6491713610171219618, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491713610171219618, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -79.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660812701392731730, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660812701392731730, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -35.96
+      objectReference: {fileID: 0}
     - target: {fileID: 7512726584027279229, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
       propertyPath: m_Pivot.x
       value: 0
