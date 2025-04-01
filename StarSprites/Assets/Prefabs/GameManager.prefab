@@ -48,6 +48,6 @@ MonoBehaviour:
   GameScreen1: {fileID: 0}
   GameScreen2: {fileID: 0}
   GameScreen3: {fileID: 0}
-  MainMenuUI: {fileID: 2248980477205494601, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+  MainMenuUI: {fileID: 2801393011076311267, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
   CreditUI: {fileID: 3947121519637611406, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}
-  GameOverUI: {fileID: 0}
+  GameOverUI: {fileID: 3947121519637611406, guid: 0a570b4a271b1104aa4bb936677be395, type: 3}

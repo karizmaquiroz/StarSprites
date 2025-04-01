@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject GameScreen0; //guardian sprites house
-    public GameObject GameScreen1; //
+    public GameObject GameScreen1; //level 1
     public GameObject GameScreen2;
     public GameObject GameScreen3;
     public GameObject MainMenuUI; //game start screen
@@ -28,11 +28,7 @@ public class GameManager : MonoBehaviour
         GameOverUI.SetActive(true);
     }
 
-    public void restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //Debug.Log("Playing game / inside game);
-    }
+   
 
     public void mainMenu()
     {
@@ -47,9 +43,18 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("Main Menu");
+
+    }
+
+
     public void startGame()
     {
         SceneManager.LoadScene("Level1"); 
+
         
     }
 
