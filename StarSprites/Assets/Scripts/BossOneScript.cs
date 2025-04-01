@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections; // Needed for IEnumerator
 
 public class BossOneScript : MonoBehaviour
 {
@@ -10,13 +11,22 @@ public class BossOneScript : MonoBehaviour
     public Transform pointA, pointB;
     public int maxHealth = 3;
 
+    // New variables for special attacks and enraged mode
+    public float chargeSpeed = 20f;
+    public float chargeDuration = 1f;
+    public float jumpForce = 300f;
+    public float slamForce = 20f;
+
     private Transform player;
     private Vector3 targetPoint;
     private int currentHealth;
     private bool isChasing = false;
     private bool movingToA = true;
     private float attackCooldownTimer = 0f;
-    private bool facingRight = true; // Track the initial facing direction
+    private bool facingRight = true;
+
+    private bool isEnraged = false;
+    private bool isPerformingSpecialAttack = false;
 
     private Rigidbody2D rb;
 
@@ -36,6 +46,28 @@ public class BossOneScript : MonoBehaviour
             return;
         }
 
+        // Check for enraged mode activation
+        if (!isEnraged && currentHealth <= maxHealth / 2)
+        {
+            isEnraged = true;
+            chaseSpeed *= 1.5f;
+            patrolSpeed *= 1.2f;
+            attackCooldown *= 0.8f; // Faster attacks when enraged
+            Debug.Log("Boss is enraged!");
+        }
+
+        // Decrement the cooldown timer
+        if (attackCooldownTimer > 0)
+        {
+            attackCooldownTimer -= Time.deltaTime;
+        }
+
+        // Skip normal movement and behavior during special attacks
+        if (isPerformingSpecialAttack)
+        {
+            return;
+        }
+
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
         if (distanceToPlayer <= detectionRange)
@@ -49,7 +81,6 @@ public class BossOneScript : MonoBehaviour
 
         if (isChasing)
         {
-            Debug.Log("Chasing Player!");
             ChasePlayer();
         }
         else
@@ -57,11 +88,7 @@ public class BossOneScript : MonoBehaviour
             Patrol();
         }
 
-        // Decrement the cooldown timer
-        if (attackCooldownTimer > 0)
-        {
-            attackCooldownTimer -= Time.deltaTime;
-        }
+        // Update facing direction based on scale.x
         if (transform.localScale.x > 0)
         {
             facingRight = false;
@@ -109,15 +136,67 @@ public class BossOneScript : MonoBehaviour
 
     void Attack()
     {
-        // Check if the cooldown period has elapsed
-        if (attackCooldownTimer <= 0)
+        // Only attack if cooldown has elapsed and not already performing a special attack
+        if (attackCooldownTimer <= 0 && !isPerformingSpecialAttack)
         {
-            // Play attack animation if using Animator
-            Debug.Log("Enemy Attacks!");
-
-            // Reset the cooldown timer
+            if (isEnraged)
+            {
+                // Randomly choose between charge attack and ground slam in enraged mode
+                int attackType = Random.Range(0, 2); // 0 for charge attack, 1 for ground slam
+                if (attackType == 0)
+                {
+                    StartCoroutine(DoChargeAttack());
+                }
+                else
+                {
+                    StartCoroutine(DoGroundSlam());
+                }
+            }
+            else
+            {
+                // Normal bite attack
+                Debug.Log("Enemy attacks with a bite!");
+            }
             attackCooldownTimer = attackCooldown;
         }
+    }
+
+    IEnumerator DoChargeAttack()
+    {
+        isPerformingSpecialAttack = true;
+        Debug.Log("Boss prepares a charge attack!");
+        // Brief telegraph delay before charging
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Boss charges!");
+        float timer = chargeDuration;
+        // Lock in the direction at the start of the charge
+        Vector2 chargeDirection = (player.position - transform.position).normalized;
+        while (timer > 0)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position + chargeDirection, chargeSpeed * Time.deltaTime);
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        isPerformingSpecialAttack = false;
+    }
+
+    IEnumerator DoGroundSlam()
+    {
+        isPerformingSpecialAttack = true;
+        Debug.Log("Boss prepares a ground slam!");
+        // Simulate a jump upwards
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Reset vertical velocity
+        rb.AddForce(new Vector2(0, jumpForce));
+        // Wait for the jump to reach its apex
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Boss slams down!");
+        // Apply downward force for slam
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, -slamForce);
+        // Wait for the slam to complete
+        yield return new WaitForSeconds(0.5f);
+        // Reset vertical velocity after slam
+        rb.linearVelocity = Vector2.zero;
+        isPerformingSpecialAttack = false;
     }
 
     public void TakeDamage()
