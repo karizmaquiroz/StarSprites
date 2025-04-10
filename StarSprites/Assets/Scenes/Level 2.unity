@@ -3803,8 +3803,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2085938162}
     - target: {fileID: 805409275198306744, guid: 4334434950e0bb74c9db0af191c200fb, type: 3}
+      propertyPath: diveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805409275198306744, guid: 4334434950e0bb74c9db0af191c200fb, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 805409275198306744, guid: 4334434950e0bb74c9db0af191c200fb, type: 3}
       propertyPath: platforms.Array.size
