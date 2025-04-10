@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      scrolliconpixel_0: 5225288133576051036
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
