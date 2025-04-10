@@ -7,39 +7,21 @@ public class BossTwoScript : MonoBehaviour
     [System.Serializable]
     public class BirdRow
     {
-        [Tooltip("Assign all bird GameObjects in this row.")]
         public List<GameObject> birds;
-        
-        [Tooltip("Each row takes three hits before dying.")]
         public int hitsRemaining = 3;
-        
-        [Tooltip("Set to true when this row is permanently dead.")]
         public bool isDead = false;
-        
         [HideInInspector]
         public List<Vector3> initialPositions = new List<Vector3>();
-        
         [HideInInspector]
         public bool isAttacking = false;
     }
-
-    [Header("Bird Rows Settings")]
-    [Tooltip("Assign exactly three rows of birds.")]
     public BirdRow[] birdRows;
-
-    [Header("Dive Settings")]
-    [Tooltip("Speed multiplier for the dive movement.")]
     public float diveSpeed = 5f;
-    
-    [Tooltip("Time (in seconds) for a dive to complete.")]
     public float diveDuration = 1.0f;
-    
-    [Tooltip("Delay (in seconds) before birds respawn at their original positions after a dive.")]
     public float respawnDelay = 1f;
-
-    [Header("Player Settings")]
-    [Tooltip("Reference to the player transform.")]
     public Transform player;
+
+    public List<Collider2D> platforms;
 
     private void Start()
     {
@@ -70,18 +52,27 @@ public class BossTwoScript : MonoBehaviour
         }
     }
 
-    // Placeholder method to determine which platform the player is on.
-    // Replace this logic with your own criteria (e.g., based on position, state, etc.).
+    // Detects platform that the player is standing on.
+    // If said platform exists and aligns with a row of birds, that will be returned.
     int GetPlayerPlatformIndex()
     {
-        // Example logic: use the player's y-position to determine platform.
-        float y = player.position.y;
-        if (y < 0)
-            return 0;
-        else if (y < 5)
-            return 1;
+        if (platforms != null && player != null)
+        {
+            if (platforms[0].bounds.Contains(player.position)){
+                return 0;
+            }
+            else if (platforms[1].bounds.Contains(player.position)){
+                return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
         else
-            return 2;
+        {
+            return 0;
+        }
     }
 
     // Coroutine to animate the dive of a row of birds.
@@ -123,10 +114,8 @@ public class BossTwoScript : MonoBehaviour
             if (row.birds[i] != null)
                 row.birds[i].transform.position = diveTargets[i];
         }
-        
-        // At this point the birds have rushed past the player.
-        // TODO: Insert code to damage the player here.
-        // For example: DamagePlayer();
+
+        HealthBarManager.Instance.TakeDamage(50);
 
         // Wait for a short delay before respawning the birds.
         yield return new WaitForSeconds(respawnDelay);
@@ -165,12 +154,5 @@ public class BossTwoScript : MonoBehaviour
                     bird.SetActive(false);
             }
         }
-    }
-
-    // Placeholder function for damaging the player.
-    // Fill in with your own damage logic.
-    void DamagePlayer()
-    {
-        // Your damage logic here.
     }
 }

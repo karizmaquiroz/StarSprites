@@ -92,19 +92,19 @@ public class CharacterMovement : MonoBehaviour
         }
     }
     
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            StartCoroutine(TakeDamageAfterDelay(1f));
-        }
-    }
-    IEnumerator TakeDamageAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Debug.Log("Taking damage now!");
-        HealthBarManager.Instance.TakeDamage(25);
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Enemy"))
+    //    {
+    //        StartCoroutine(TakeDamageAfterDelay(1f));
+    //    }
+    //}
+    //IEnumerator TakeDamageAfterDelay(float delay)
+    //{
+    //    yield return new WaitForSeconds(delay);
+    //    Debug.Log("Taking damage now!");
+    //    HealthBarManager.Instance.TakeDamage(25);
+    //}
     
     void Shoot()
     {

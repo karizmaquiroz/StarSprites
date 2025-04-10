@@ -6,7 +6,7 @@ public class EnemyBehavior : MonoBehaviour
     public float chaseSpeed = 15f;
     public float detectionRange = 30f;
     public float attackRange = 5f;
-    public float attackCooldown = 2f; // Cooldown duration in seconds
+    public float attackCooldown = 2f;
     public Transform pointA, pointB;
     public int maxHealth = 3;
 
@@ -16,7 +16,7 @@ public class EnemyBehavior : MonoBehaviour
     private bool isChasing = false;
     private bool movingToA = true;
     private float attackCooldownTimer = 0f;
-    private bool facingRight; // Track the initial facing direction
+    private bool facingRight;
 
     private Rigidbody2D rb;
 
@@ -30,6 +30,7 @@ public class EnemyBehavior : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         targetPoint = pointA.position;
         currentHealth = maxHealth;
+        // Checks which direction bear is facing
         if (transform.localScale.x < 0)
         {
             facingRight = false;
@@ -44,14 +45,17 @@ public class EnemyBehavior : MonoBehaviour
 
     void Update()
     {
+        // Checks if player exists
         if (player == null)
         {
             Debug.LogError("Player not found! Ensure the player GameObject is tagged as 'Player'.");
             return;
         }
 
+        // Distance to player
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
+        // Detects player distance to initiate chasing
         if (distanceToPlayer <= detectionRange)
         {
             isChasing = true;
@@ -61,6 +65,7 @@ public class EnemyBehavior : MonoBehaviour
             isChasing = false;
         }
 
+        // Controls chasing behavior
         if (isChasing)
         {
             Debug.Log("Chasing Player!");
@@ -88,8 +93,10 @@ public class EnemyBehavior : MonoBehaviour
 
     }
 
+    // Controls patrol behavior
     void Patrol()
     {
+        // Bear walks back and forth between two designated spots
         float step = patrolSpeed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, targetPoint, step);
 
@@ -98,16 +105,18 @@ public class EnemyBehavior : MonoBehaviour
             Debug.Log("Moving to next patrol point!");
             movingToA = !movingToA;
             targetPoint = movingToA ? pointA.position : pointB.position;
-            Flip(); // Flip when changing patrol direction
+            Flip();
         }
     }
 
+    // Bear chases player
     void ChasePlayer()
     {
+        // The bear follows the player around at increased speed until the player is out of range
         float step = chaseSpeed * Time.deltaTime;
         Vector3 newPosition = Vector2.MoveTowards(transform.position, player.position, step);
 
-        // Flip the sprite to face the player's direction
+
         if ((player.position.x < transform.position.x && facingRight) ||
             (player.position.x > transform.position.x && !facingRight))
         {
@@ -123,21 +132,19 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-
+    // Attack animation plays and bear damages player every few seconds
     void Attack()
     {
-        // Check if the cooldown period has elapsed
         if (attackCooldownTimer <= 0)
         {
-            // Play attack animation if using Animator
             Debug.Log("Enemy Attacks!");
             animator.SetTrigger("playerContact");
-
-            // Reset the cooldown timer
+            HealthBarManager.Instance.TakeDamage(25);
             attackCooldownTimer = attackCooldown;
         }
     }
 
+    // Allows the bear to take damage
     public void TakeDamage()
     {
         currentHealth--;
@@ -147,6 +154,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+    // Allows bear to die
     void Die()
     {
         Debug.Log("Enemy Died!");
@@ -154,6 +162,7 @@ public class EnemyBehavior : MonoBehaviour
         Destroy(gameObject);
     }
 
+    // Flip's bear sprite
     void Flip()
     {
         Vector3 scale = transform.localScale;
@@ -163,14 +172,14 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
-            scale.x = 3; // Flip the sprite horizontally
+            scale.x = 3;
         }
 
         transform.localScale = scale;
         Debug.Log("Enemy flipped. New scale: " + transform.localScale);
     }
 
-
+    // Handles collision with player
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
