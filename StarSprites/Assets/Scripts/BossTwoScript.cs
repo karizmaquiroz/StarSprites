@@ -15,13 +15,16 @@ public class BossTwoScript : MonoBehaviour
         [HideInInspector]
         public bool isAttacking = false;
     }
+
     public BirdRow[] birdRows;
     public float diveSpeed = 5f;
     public float diveDuration = 1.0f;
     public float respawnDelay = 1f;
     public Transform player;
-
     public List<Collider2D> platforms;
+
+    // This flag is set by an external trigger object.
+    private bool isPlayerTriggered = false;
 
     private void Start()
     {
@@ -39,6 +42,10 @@ public class BossTwoScript : MonoBehaviour
 
     private void Update()
     {
+        // Only run boss behavior if the external trigger has been activated.
+        if (!isPlayerTriggered)
+            return;
+
         // Determine which row should attack based on the player's platform.
         int platformIndex = GetPlayerPlatformIndex();
         if (platformIndex >= 0 && platformIndex < birdRows.Length)
@@ -52,16 +59,17 @@ public class BossTwoScript : MonoBehaviour
         }
     }
 
-    // Detects platform that the player is standing on.
-    // If said platform exists and aligns with a row of birds, that will be returned.
+    // This method checks which platform the player is currently on.
     int GetPlayerPlatformIndex()
     {
         if (platforms != null && player != null)
         {
-            if (platforms[0].bounds.Contains(player.position)){
+            if (platforms[0].bounds.Contains(player.position))
+            {
                 return 0;
             }
-            else if (platforms[1].bounds.Contains(player.position)){
+            else if (platforms[1].bounds.Contains(player.position))
+            {
                 return 1;
             }
             else
@@ -119,7 +127,7 @@ public class BossTwoScript : MonoBehaviour
 
         // Wait for a short delay before respawning the birds.
         yield return new WaitForSeconds(respawnDelay);
-        
+
         // Respawn birds at their original positions if the row is still alive.
         if (!row.isDead)
         {
@@ -154,5 +162,12 @@ public class BossTwoScript : MonoBehaviour
                     bird.SetActive(false);
             }
         }
+    }
+
+    // This method will be called by an external trigger object.
+    public void SetPlayerTriggered(bool state)
+    {
+        isPlayerTriggered = state;
+        Debug.Log("Boss trigger state set to: " + state);
     }
 }

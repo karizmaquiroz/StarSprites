@@ -180,7 +180,7 @@ public class EnemyBehavior : MonoBehaviour
     }
 
     // Handles collision with player
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
