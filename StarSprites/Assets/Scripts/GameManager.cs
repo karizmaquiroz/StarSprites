@@ -57,6 +57,10 @@ public class GameManager : MonoBehaviour
 
         
     }
+    public void nextLevel()
+    {
+        SceneManager.LoadScene("Level2");
+    }
 
     public void creditButton()
     {
