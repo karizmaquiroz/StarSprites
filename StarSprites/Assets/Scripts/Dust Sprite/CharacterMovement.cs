@@ -20,6 +20,8 @@ public class CharacterMovement : MonoBehaviour
     private int maxJumps = 2;
     public GameObject shotpoint;
     public bool isFacingRight;
+    
+    private bool isStunned = false;
 
    //animator (lis)
     Animator animator;
@@ -34,6 +36,13 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        if (isStunned)
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Optional: freeze horizontal movement
+            animator.SetFloat("walking", 0f);
+            return;
+        }
+        
         float moveInput = Input.GetAxis("Horizontal");
         animator.SetFloat("walking", Mathf.Abs(moveInput));
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
@@ -90,6 +99,22 @@ public class CharacterMovement : MonoBehaviour
         {
             Shoot();
         }
+    }
+    
+    public void Stun(float duration)
+    {
+        if (!isStunned)
+            StartCoroutine(StunRoutine(duration));
+    }
+
+    private IEnumerator StunRoutine(float duration)
+    {
+        isStunned = true;
+        // Disable movement here
+        Debug.Log("Player is stunned!");
+        yield return new WaitForSeconds(duration);
+        isStunned = false;
+        // Re-enable movement here
     }
     
     //private void OnCollisionEnter2D(Collision2D collision)
