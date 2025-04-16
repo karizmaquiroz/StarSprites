@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 50708292eec44a0458e845a675b2a994
+guid: 4d7a84b427912f048aa12d4e0c867d72
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6432609418600776150
-    second: large waterfall_0
-  - first:
-      213: -5635222740296718957
-    second: large waterfall_1
+      213: 8741685207967059583
+    second: Back Sprite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: large waterfall_0
+      name: Back Sprite_0
       rect:
         serializedVersion: 2
-        x: 1142
-        y: 1242
-        width: 350
-        height: 1643
+        x: 0
+        y: 0
+        width: 49
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,30 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d1088e4f28354950800000000000000
-      internalID: 6432609418600776150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: large waterfall_1
-      rect:
-        serializedVersion: 2
-        x: 1652
-        y: 1241
-        width: 353
-        height: 1643
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 395296e36caabc1b0800000000000000
-      internalID: -5635222740296718957
+      spriteID: f7ec9279164b05970800000000000000
+      internalID: 8741685207967059583
       vertices: []
       indices: 
       edges: []
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      large waterfall_0: 6432609418600776150
-      large waterfall_1: -5635222740296718957
+      Back Sprite_0: 8741685207967059583
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
