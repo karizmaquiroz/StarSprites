@@ -122,7 +122,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6654300131336719472}
         m_TargetAssemblyTypeName: FurniturePlacer, Assembly-CSharp
-        m_MethodName: SelectFurniture
+        m_MethodName: SelectFurnitureFromInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -406,7 +406,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6654300131336719472}
         m_TargetAssemblyTypeName: FurniturePlacer, Assembly-CSharp
-        m_MethodName: SelectFurniture
+        m_MethodName: SelectFurnitureFromInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -538,7 +538,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6654300131336719472}
         m_TargetAssemblyTypeName: FurniturePlacer, Assembly-CSharp
-        m_MethodName: SelectFurniture
+        m_MethodName: SelectFurnitureFromInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
