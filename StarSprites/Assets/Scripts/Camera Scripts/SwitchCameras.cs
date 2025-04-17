@@ -5,6 +5,9 @@ public class SwitchCameras : MonoBehaviour
 {
     public CinemachineVirtualCamera Cam1Narrow;
     public CinemachineVirtualCamera Cam2Wide;
+    public CinemachineVirtualCamera CLiffCamera;
+    public CinemachineVirtualCamera CamLevel1View;
+
 
     private void Update()
     {
@@ -16,5 +19,10 @@ public class SwitchCameras : MonoBehaviour
         {
             CameraManager.SwitchCamera(Cam2Wide);
         }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            CameraManager.SwitchCamera(CamLevel1View);
+        }
     }
+
 }
