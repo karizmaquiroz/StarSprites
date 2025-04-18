@@ -18,7 +18,8 @@ public class WardManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Optional: Keep across scenes
+            DontDestroyOnLoad(gameObject);
+            LoadWardProgress();
         }
         else
         {
@@ -34,7 +35,6 @@ public class WardManager : MonoBehaviour
             return;
         }
 
-        // Mark the level as completed
         switch (levelIndex)
         {
             case 1:
@@ -48,7 +48,6 @@ public class WardManager : MonoBehaviour
                 break;
         }
 
-        // Unlock corresponding ward piece
         int pieceIndex = levelIndex - 1;
         if (!wardPieces[pieceIndex])
         {
@@ -56,15 +55,15 @@ public class WardManager : MonoBehaviour
             Debug.Log($"Ward piece {pieceIndex + 1} collected!");
         }
 
-        // Check if the full ward is assembled
+        SaveWardProgress();
+
         if (IsWardComplete)
         {
             Debug.Log("All ward pieces collected! The ward is complete.");
-            // Trigger whatever happens when the full ward is built
+            // Add logic for what happens when the ward is complete
         }
     }
 
-    // Optional helper to check current progress
     public int GetWardProgress()
     {
         int count = 0;
@@ -73,5 +72,50 @@ public class WardManager : MonoBehaviour
             if (piece) count++;
         }
         return count;
+    }
+
+    private void SaveWardProgress()
+    {
+        PlayerPrefs.SetInt("Level1Complete", level1Complete ? 1 : 0);
+        PlayerPrefs.SetInt("Level2Complete", level2Complete ? 1 : 0);
+        PlayerPrefs.SetInt("Level3Complete", level3Complete ? 1 : 0);
+
+        for (int i = 0; i < 3; i++)
+        {
+            PlayerPrefs.SetInt($"WardPiece{i}", wardPieces[i] ? 1 : 0);
+        }
+
+        PlayerPrefs.Save();
+    }
+
+    private void LoadWardProgress()
+    {
+        level1Complete = PlayerPrefs.GetInt("Level1Complete", 0) == 1;
+        level2Complete = PlayerPrefs.GetInt("Level2Complete", 0) == 1;
+        level3Complete = PlayerPrefs.GetInt("Level3Complete", 0) == 1;
+
+        for (int i = 0; i < 3; i++)
+        {
+            wardPieces[i] = PlayerPrefs.GetInt($"WardPiece{i}", 0) == 1;
+        }
+    }
+
+    public void ResetWardProgress()
+    {
+        PlayerPrefs.DeleteKey("Level1Complete");
+        PlayerPrefs.DeleteKey("Level2Complete");
+        PlayerPrefs.DeleteKey("Level3Complete");
+        for (int i = 0; i < 3; i++)
+        {
+            PlayerPrefs.DeleteKey($"WardPiece{i}");
+        }
+
+        level1Complete = false;
+        level2Complete = false;
+        level3Complete = false;
+        for (int i = 0; i < 3; i++) wardPieces[i] = false;
+
+        PlayerPrefs.Save();
+        Debug.Log("Ward progress reset.");
     }
 }
