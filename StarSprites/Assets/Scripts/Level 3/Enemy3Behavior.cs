@@ -6,13 +6,18 @@ public class Enemy3Behavior : MonoBehaviour
     public float patrolSpeed = 2f;
     public float chaseSpeed = 4f;
     public float patrolRange = 5f;
-    public float detectionRange = 6f;
-    public float attackRange = 1.5f;
+    public float detectionRange = 10f;
+    public float attackRange = 5f;
     public float stunDuration = 1f;
     public float retreatDistance = 3f;
     public float cooldownTime = 2f;
+    public int hitPoints = 5;
     public Transform player;
     public CharacterMovement playerController;
+    public float flashDuration = 0.1f;
+
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
 
     private Vector2 patrolStart;
     private bool movingRight = true;
@@ -28,6 +33,9 @@ public class Enemy3Behavior : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         patrolStart = transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+            originalColor = spriteRenderer.color;
     }
 
     void Update()
@@ -43,9 +51,19 @@ public class Enemy3Behavior : MonoBehaviour
                 break;
 
             case State.Chasing:
-                ChasePlayer();
-                if (distanceToPlayer < attackRange)
+                if (distanceToPlayer > attackRange)
+                {
+                    ChasePlayer();
+                }
+                else
+                {
+                    rb.linearVelocity = Vector2.zero; // Stop moving if close enough
+                }
+
+                if (distanceToPlayer < attackRange && !isAttacking)
+                {
                     StartCoroutine(AttackRoutine());
+                }
                 break;
 
             case State.Cooldown:
@@ -55,6 +73,7 @@ public class Enemy3Behavior : MonoBehaviour
                 break;
         }
     }
+
 
     void Patrol()
     {
@@ -126,5 +145,35 @@ public class Enemy3Behavior : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bullet"))
+        {
+            hitPoints--;
+
+            Destroy(collision.gameObject);
+
+            if (spriteRenderer != null)
+                StartCoroutine(FlashRed());
+
+            if (hitPoints <= 0)
+            {
+                Die();
+            }
+        }
+    }
+
+    private IEnumerator FlashRed()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(flashDuration);
+        spriteRenderer.color = originalColor;
+    }
+
+    void Die()
+    {
+        Debug.Log("Enemy defeated!");
+        Destroy(gameObject);
     }
 }

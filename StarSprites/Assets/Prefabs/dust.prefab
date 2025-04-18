@@ -170,6 +170,8 @@ MonoBehaviour:
   - serializedVersion: 2
     m_Bits: 64
   projectilePrefab: {fileID: 5180379506700079987, guid: 568a79e40b21c2c42847d20d9a9bd569, type: 3}
+  spreadProjectilePrefab: {fileID: 5615537224628072093, guid: 79f158f9e17349049ac9a4da7e220928, type: 3}
+  bigStarPrefab: {fileID: 9191000816128964507, guid: efd47b14400d9d742b1a75506b6383a5, type: 3}
   firePoint: {fileID: 2506748726056863678}
   projectileSpeed: 20
   shotpoint: {fileID: 9010135769811177071}
