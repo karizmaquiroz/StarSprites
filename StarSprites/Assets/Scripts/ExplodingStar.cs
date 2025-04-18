@@ -10,8 +10,6 @@ public class ExplodingStar : MonoBehaviour
         {
             if (explosionEffect != null)
                 Instantiate(explosionEffect, transform.position, Quaternion.identity);
-
-            Destroy(collision.gameObject); // Optional: destroy enemy
             Destroy(gameObject);           // Destroy star
         }
     }
