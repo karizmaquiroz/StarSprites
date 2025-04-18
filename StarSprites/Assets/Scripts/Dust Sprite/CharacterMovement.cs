@@ -23,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
     public bool isFacingRight;
 
     private bool isStunned = false;
+    private int selectedAbility = 1;
 
     Animator animator;
     SpriteRenderer spriteRenderer;
@@ -77,16 +78,28 @@ public class CharacterMovement : MonoBehaviour
 
         rb.gravityScale = rb.linearVelocity.y > 0 ? 2f : 4f;
 
+        // Ability Selection (keys 1-3)
+        if (Input.GetKeyDown(KeyCode.Alpha1)) selectedAbility = 1;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) selectedAbility = 2;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) selectedAbility = 3;
+
         int level = XPBarBehavior.Instance.level;
 
-        if (Input.GetButtonDown("Fire1") && level >= 1)
-            Shoot();
-
-        if (Input.GetKeyDown(KeyCode.Alpha2) && level >= 2)
-            SpreadFire();
-
-        if (Input.GetKeyDown(KeyCode.Alpha3) && level >= 3)
-            ExplosiveStar();
+        if (Input.GetButtonDown("Fire1"))
+        {
+            switch (selectedAbility)
+            {
+                case 1:
+                    if (level >= 1) Shoot();
+                    break;
+                case 2:
+                    if (level >= 2) SpreadFire();
+                    break;
+                case 3:
+                    if (level >= 3) ExplosiveStar();
+                    break;
+            }
+        }
     }
 
     public void Stun(float duration)

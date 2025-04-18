@@ -218,6 +218,10 @@ MonoBehaviour:
   currentXP: 0
   maxXP: 100
   level: 1
+  abilityIcons:
+  - {fileID: 5788831679364877923}
+  - {fileID: 3983224780409080658}
+  - {fileID: 4757964255639368315}
 --- !u!1 &1930145364987740153
 GameObject:
   m_ObjectHideFlags: 0
