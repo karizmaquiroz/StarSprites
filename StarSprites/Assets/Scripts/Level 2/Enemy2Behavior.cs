@@ -54,6 +54,7 @@ public class Enemy2Behavior : MonoBehaviour
 
         if (collision.collider.CompareTag("Player"))
         {
+            HealthBarManager.Instance.TakeDamage(10);
             Explode(false);
         }
     }

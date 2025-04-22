@@ -46,7 +46,7 @@ public class NextScene : MonoBehaviour
                     break;
                 }
             }
-
+            Debug.Log(allEnemiesInactive);
             if (allEnemiesInactive)
             {
                 bossCleared = true;
@@ -59,6 +59,7 @@ public class NextScene : MonoBehaviour
                 else
                 {
                     // Fallback: if no trigger assigned, activate boss immediately
+                    Debug.Log("Boss activated");
                     ActivateBoss();
                 }
             }

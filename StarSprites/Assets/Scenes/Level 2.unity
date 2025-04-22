@@ -4222,6 +4222,10 @@ PrefabInstance:
       propertyPath: wardManager
       value: 
       objectReference: {fileID: 812457718}
+    - target: {fileID: 3211908873763938674, guid: 17e1aea3cd84a704194e8aa1a7c994f5, type: 3}
+      propertyPath: nextSceneIndex
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5948150265338502110, guid: 17e1aea3cd84a704194e8aa1a7c994f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8740833
