@@ -48,6 +48,6 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         PausePanel.SetActive(false);
-        GameIsPaused = false;
+        GameIsPaused = true; //changed
     }
 }
