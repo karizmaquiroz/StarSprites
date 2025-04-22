@@ -139,7 +139,7 @@ public class EnemyBehavior : MonoBehaviour
         {
             Debug.Log("Enemy Attacks!");
             animator.SetTrigger("playerContact");
-            HealthBarManager.Instance.TakeDamage(25);
+            HealthBarManager.Instance.TakeDamage(5);
             attackCooldownTimer = attackCooldown;
         }
     }
@@ -158,7 +158,7 @@ public class EnemyBehavior : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy Died!");
-        XPBarBehavior.Instance.GainXP(25);
+        XPBarBehavior.Instance.GainXP(34);
         Destroy(gameObject);
     }
 

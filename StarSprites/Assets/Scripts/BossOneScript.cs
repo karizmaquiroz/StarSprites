@@ -9,7 +9,7 @@ public class BossOneScript : MonoBehaviour
     public float attackRange = 5f;
     public float attackCooldown = 2f; // Cooldown duration in seconds
     public Transform pointA, pointB;
-    public int maxHealth = 3;
+    public int maxHealth = 300;
 
     // New variables for special attacks and enraged mode
     public float chargeSpeed = 20f;
@@ -29,6 +29,8 @@ public class BossOneScript : MonoBehaviour
     private bool isPerformingSpecialAttack = false;
 
     private Rigidbody2D rb;
+
+    public HealthBarManager healthBarManager; // Reference to the HealthBarManager script
 
     void Start()
     {
@@ -89,14 +91,7 @@ public class BossOneScript : MonoBehaviour
         }
 
         // Update facing direction based on scale.x
-        if (transform.localScale.x > 0)
-        {
-            facingRight = false;
-        }
-        else
-        {
-            facingRight = true;
-        }
+        facingRight = transform.localScale.x <= 0;
     }
 
     void Patrol()
@@ -118,10 +113,8 @@ public class BossOneScript : MonoBehaviour
         Vector3 newPosition = Vector2.MoveTowards(transform.position, player.position, step);
 
         // Flip the bear to face the direction it is moving
-        if ((newPosition.x < transform.position.x && facingRight) ||
-            (newPosition.x > transform.position.x && !facingRight))
+        if ((newPosition.x < transform.position.x && facingRight) || (newPosition.x > transform.position.x && !facingRight))
         {
-            Debug.Log("Flipping bear to face direction: " + (newPosition.x < transform.position.x ? "left" : "right"));
             Flip();
         }
 
@@ -129,34 +122,28 @@ public class BossOneScript : MonoBehaviour
 
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
-            Debug.Log("Player in range!");
             Attack();
         }
     }
 
     void Attack()
     {
-        // Only attack if cooldown has elapsed and not already performing a special attack
         if (attackCooldownTimer <= 0 && !isPerformingSpecialAttack)
         {
             if (isEnraged)
             {
                 // Randomly choose between charge attack and ground slam in enraged mode
-                int attackType = Random.Range(0, 2); // 0 for charge attack, 1 for ground slam
-                if (attackType == 0)
-                {
+                if (Random.value < 0.5f)
                     StartCoroutine(DoChargeAttack());
-                }
                 else
-                {
                     StartCoroutine(DoGroundSlam());
-                }
             }
             else
             {
-                // Normal bite attack
                 Debug.Log("Enemy attacks with a bite!");
+                healthBarManager.TakeDamage(10);
             }
+
             attackCooldownTimer = attackCooldown;
         }
     }
@@ -164,44 +151,42 @@ public class BossOneScript : MonoBehaviour
     IEnumerator DoChargeAttack()
     {
         isPerformingSpecialAttack = true;
-        Debug.Log("Boss prepares a charge attack!");
-        // Brief telegraph delay before charging
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("Boss charges!");
+
         float timer = chargeDuration;
-        // Lock in the direction at the start of the charge
         Vector2 chargeDirection = (player.position - transform.position).normalized;
-        while (timer > 0)
+        while (timer > 0f)
         {
             transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position + chargeDirection, chargeSpeed * Time.deltaTime);
+            healthBarManager.TakeDamage(20); // Damage the player during charge
             timer -= Time.deltaTime;
             yield return null;
         }
+
         isPerformingSpecialAttack = false;
     }
 
     IEnumerator DoGroundSlam()
     {
         isPerformingSpecialAttack = true;
-        Debug.Log("Boss prepares a ground slam!");
-        // Simulate a jump upwards
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Reset vertical velocity
-        rb.AddForce(new Vector2(0, jumpForce));
-        // Wait for the jump to reach its apex
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("Boss slams down!");
-        // Apply downward force for slam
+
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+        rb.AddForce(Vector2.up * jumpForce);
+        yield return new WaitForSeconds(0.5f);
+
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, -slamForce);
-        // Wait for the slam to complete
+        healthBarManager.TakeDamage(25); // Damage the player during slam
         yield return new WaitForSeconds(0.5f);
-        // Reset vertical velocity after slam
+
         rb.linearVelocity = Vector2.zero;
         isPerformingSpecialAttack = false;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        currentHealth--;
+        currentHealth -= damage; // Decrement health by damage amount
+        Debug.Log($"Boss took {damage} damage, remaining health: {currentHealth}");
         if (currentHealth <= 0)
         {
             Die();
@@ -211,7 +196,7 @@ public class BossOneScript : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy Died!");
-        XPBarBehavior.Instance.GainXP(25);
+        XPBarBehavior.Instance.GainXP(50);
         Destroy(gameObject);
     }
 
@@ -219,18 +204,17 @@ public class BossOneScript : MonoBehaviour
     {
         facingRight = !facingRight;
         Vector3 scale = transform.localScale;
-        scale.x *= -1;
+        scale.x *= -1f;
         transform.localScale = scale;
-        Debug.Log("Bear flipped. New scale: " + transform.localScale);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.CompareTag("Bullet"))
         {
-            TakeDamage();
+            TakeDamage(5); // Adjust damage per hit as needed
             Destroy(collision.gameObject);
-            Debug.Log("I've been hit!");
         }
     }
 }
+
