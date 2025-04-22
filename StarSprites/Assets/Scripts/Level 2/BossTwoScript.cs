@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -154,15 +154,17 @@ public class BossTwoScript : MonoBehaviour
         row.hitsRemaining--;
         if (row.hitsRemaining <= 0)
         {
-            // The row is now dead. Disable all birds in this row.
             row.isDead = true;
             foreach (var bird in row.birds)
             {
                 if (bird != null)
                     bird.SetActive(false);
             }
+
+            CheckBossDeath(); //Check if the boss should now be destroyed
         }
     }
+
 
     // This method will be called by an external trigger object.
     public void SetPlayerTriggered(bool state)
@@ -170,4 +172,18 @@ public class BossTwoScript : MonoBehaviour
         isPlayerTriggered = state;
         Debug.Log("Boss trigger state set to: " + state);
     }
+
+    void CheckBossDeath()
+    {
+        foreach (var row in birdRows)
+        {
+            if (!row.isDead)
+                return; // At least one row still alive — don’t destroy yet
+        }
+
+        // All rows are dead, destroy this GameObject (the boss)
+        Debug.Log("All bird rows defeated. Destroying boss.");
+        Destroy(gameObject);
+    }
+
 }
