@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e6dacf94463fca14dba69b641b92a1aa
+guid: 75f7d3baaf765a8408bf245dccb5fe2e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -515358133690584244
-    second: Broken glass orb (1)_0
+      213: 9011213135108779423
+    second: Untitled_Artwork (9)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Broken glass orb (1)_0
+      name: Untitled_Artwork (9)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 144
+        width: 68
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c43b345028419d8f0800000000000000
-      internalID: -515358133690584244
+      spriteID: f9d2e795a924e0d70800000000000000
+      internalID: 9011213135108779423
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Broken glass orb (1)_0: -515358133690584244
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

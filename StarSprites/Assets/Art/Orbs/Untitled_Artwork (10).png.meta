@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 53fbfd5dac99ced4ab56df87bb0bcc0b
+guid: 08bc0aac1c88d6349a35fb500220f823
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4335998395524699717
-    second: Glass orb (1)_0
+      213: 4483270901623326340
+    second: Untitled_Artwork (10)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,40 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Glass orb (1)_0
+      name: Untitled_Artwork (10)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 144
+        width: 68
+        height: 68
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -33, y: 15}
-        - {x: -32, y: -2}
-        - {x: -30, y: -9}
-        - {x: -23, y: -17}
-        - {x: -15, y: -24}
-        - {x: -5, y: -27}
-        - {x: 9, y: -27}
-        - {x: 24, y: -18}
-        - {x: 31, y: -8}
-        - {x: 34, y: 4}
-        - {x: 33, y: 14}
-        - {x: 29, y: 24}
-        - {x: 22, y: 31}
-        - {x: 13, y: 38}
-        - {x: -1, y: 40}
-        - {x: -19, y: 37}
-        - {x: -27, y: 30}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bb92610be6073d3c0800000000000000
-      internalID: -4335998395524699717
+      spriteID: 4868a13b127c73e30800000000000000
+      internalID: 4483270901623326340
       vertices: []
       indices: 
       edges: []
@@ -168,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 862dc484544605343ab1e2e654bfaddd
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -177,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Glass orb (1)_0: -4335998395524699717
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
