@@ -49,5 +49,6 @@ public class BirdSpawner : MonoBehaviour
     {
         playerKilledABird = true;
         Debug.Log("OnBirdKilledByPlayer CALLED");
+        gameObject.SetActive(false);
     }
 }
