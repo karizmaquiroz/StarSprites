@@ -119,6 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -414,6 +415,8 @@ Rigidbody2D:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 07d9678 (pre level)
 --- !u!1 &744437576
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +509,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 --- !u!114 &744437580
@@ -1106,11 +1110,14 @@ Transform:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 07d9678 (pre level)
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 744437579}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
   - {fileID: 1558650124}
@@ -1131,3 +1138,5 @@ SceneRoots:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 07d9678 (pre level)
