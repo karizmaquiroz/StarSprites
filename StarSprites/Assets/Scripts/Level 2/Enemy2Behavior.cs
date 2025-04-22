@@ -5,12 +5,12 @@ public class Enemy2Behavior : MonoBehaviour
     public GameObject explosionEffect;
     public float diveSpeed = 5f;
     public float maxFallSpeed = -3f;
-    public float despawnTime = 5f; // Time until bird despawns if nothing happens
+    public float despawnTime = 5f;
 
     private Rigidbody2D rb;
     private Transform player;
-    public BirdSpawner spawner;
-    private bool alreadyExploded = false; // Prevent double triggering
+    private BirdSpawner spawner;
+    private bool alreadyExploded = false;
 
     void Start()
     {
@@ -20,7 +20,17 @@ public class Enemy2Behavior : MonoBehaviour
         if (playerObj != null)
             player = playerObj.transform;
 
-        // Start the despawn countdown
+        GameObject spawnerObj = GameObject.Find("BirdSpawner");
+        if (spawnerObj != null)
+        {
+            spawner = spawnerObj.GetComponent<BirdSpawner>();
+            Debug.Log("Spawner assigned in bird.");
+        }
+        else
+        {
+            Debug.LogWarning("BirdSpawner not found in scene!");
+        }
+
         Invoke(nameof(Despawn), despawnTime);
     }
 
@@ -51,6 +61,7 @@ public class Enemy2Behavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (alreadyExploded) return;
+
         if (collision.CompareTag("Bullet"))
         {
             Debug.Log("Killed by player");
@@ -60,24 +71,27 @@ public class Enemy2Behavior : MonoBehaviour
 
     void Explode(bool killedByPlayer)
     {
+        if (alreadyExploded) return;
         alreadyExploded = true;
-        CancelInvoke(nameof(Despawn)); // Stop timer if explosion happens
+
+        Debug.Log("Explode called. KilledByPlayer: " + killedByPlayer);
 
         if (explosionEffect != null)
-        {
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        }
 
         if (killedByPlayer)
         {
-            Debug.Log(spawner != null);
-            Debug.Log("Birds will stop");
-            spawner.OnBirdKilledByPlayer();
-            XPBarBehavior.Instance.GainXP(10);
-        }
-        else
-        {
-            HealthBarManager.Instance.TakeDamage(25);
+            Debug.Log("Killed by player!");
+
+            if (spawner != null)
+            {
+                Debug.Log("Calling spawner.OnBirdKilledByPlayer()");
+                spawner.OnBirdKilledByPlayer();
+            }
+            else
+            {
+                Debug.LogWarning("Spawner is NULL in bird script!");
+            }
         }
 
         Destroy(gameObject);
@@ -87,7 +101,7 @@ public class Enemy2Behavior : MonoBehaviour
     {
         if (alreadyExploded) return;
 
-        // Optional: add fade-out or despawn effect here
+        Debug.Log("Bird despawned due to timeout.");
         Destroy(gameObject);
     }
 }
