@@ -9,12 +9,8 @@ public class Enemy2Behavior : MonoBehaviour
 
     private Rigidbody2D rb;
     private Transform player;
-<<<<<<< Updated upstream
     private BirdSpawner spawner;
     private bool alreadyExploded = false;
-=======
-    private bool alreadyExploded = false; // Prevent double triggering
->>>>>>> Stashed changes
 
     void Start()
     {
@@ -75,27 +71,14 @@ public class Enemy2Behavior : MonoBehaviour
 
     void Explode(bool killedByPlayer)
     {
-<<<<<<< Updated upstream
         if (alreadyExploded) return;
         alreadyExploded = true;
-
         Debug.Log("Explode called. KilledByPlayer: " + killedByPlayer);
-
-=======
-        Debug.Log("Explode called. KilledByPlayer: " + killedByPlayer);
-    
->>>>>>> Stashed changes
         if (explosionEffect != null)
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
-
         if (killedByPlayer)
         {
             Debug.Log("Killed by player!");
-<<<<<<< Updated upstream
-
-=======
-        
->>>>>>> Stashed changes
             if (spawner != null)
             {
                 Debug.Log("Calling spawner.OnBirdKilledByPlayer()");
