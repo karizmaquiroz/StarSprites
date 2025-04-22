@@ -73,16 +73,12 @@ public class Enemy2Behavior : MonoBehaviour
     {
         if (alreadyExploded) return;
         alreadyExploded = true;
-
         Debug.Log("Explode called. KilledByPlayer: " + killedByPlayer);
-
         if (explosionEffect != null)
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
-
         if (killedByPlayer)
         {
             Debug.Log("Killed by player!");
-
             if (spawner != null)
             {
                 Debug.Log("Calling spawner.OnBirdKilledByPlayer()");
@@ -96,6 +92,7 @@ public class Enemy2Behavior : MonoBehaviour
 
         Destroy(gameObject);
     }
+
 
     void Despawn()
     {
