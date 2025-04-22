@@ -2385,7 +2385,7 @@ Transform:
   m_GameObject: {fileID: 1322751627}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.618641, y: -1.7128003, z: -10}
+  m_LocalPosition: {x: 2.7821383, y: -1.7128003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4293,7 +4293,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2696768427278219574, guid: 3c85ea8ab51a670488a304587e2ea48c, type: 3}
       propertyPath: m_Name
-      value: EnemyBirds
+      value: BirdSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 2696768427278219574, guid: 3c85ea8ab51a670488a304587e2ea48c, type: 3}
       propertyPath: m_IsActive
