@@ -8,7 +8,7 @@ public class Enemy2Behavior : MonoBehaviour
     public float despawnTime = 5f;
 
     private Rigidbody2D rb;
-    private Transform player;
+    public Transform player;
     private BirdSpawner spawner;
     private bool alreadyExploded = false;
 
