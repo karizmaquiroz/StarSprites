@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[ExecuteAlways]
+[RequireComponent(typeof(CanvasGroup))]
 public class InventoryUI : MonoBehaviour
 {
     [Tooltip("Array of inventory UI buttons representing each slot.")]
@@ -12,38 +14,88 @@ public class InventoryUI : MonoBehaviour
     [Tooltip("Reference to the player's InventoryManager.")]
     public InventoryManager inventoryManager;
 
-    // Call this method to refresh the inventory UI. 
-    // You may call it after adding or removing an item.
+    [Header("Editor Toggle")]
+    [Tooltip("Check to make the inventory UI visible.")]
+    public bool isVisible = false;
+
+    private CanvasGroup canvasGroup;
+
+    void Awake()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+        // Ensure initial visibility matches the Inspector toggle
+        ApplyVisibility();
+    }
+
+    void OnValidate()
+    {
+        // Called whenever you change a serialized field in the Inspector
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
+        ApplyVisibility();
+    }
+
+    /// <summary>
+    /// Refreshes the inventory icons. Call this after adding/removing items.
+    /// </summary>
     public void RefreshUI()
     {
-        // Loop over all the inventory slot buttons.
         for (int i = 0; i < inventorySlots.Length; i++)
         {
-            // Get the Image component from the button.
             Image slotImage = inventorySlots[i].GetComponent<Image>();
 
-            // Check if there is an item in this inventory slot index.
             if (i < inventoryManager.inventoryItems.Count)
             {
-                // Retrieve the item from the player's inventory.
-                GameObject itemGO = inventoryManager.inventoryItems[i];
-                FurnitureItem furnitureItem = itemGO.GetComponent<FurnitureItem>();
-
-                // If the item has an assigned icon, set it; otherwise, use the blank sprite.
-                if (furnitureItem != null && furnitureItem.inventoryIcon != null)
-                {
-                    slotImage.sprite = furnitureItem.inventoryIcon;
-                }
-                else
-                {
-                    slotImage.sprite = blankSprite;
-                }
+                var itemGO = inventoryManager.inventoryItems[i];
+                var furnitureItem = itemGO.GetComponent<FurnitureItem>();
+                slotImage.sprite = (furnitureItem != null && furnitureItem.inventoryIcon != null)
+                    ? furnitureItem.inventoryIcon
+                    : blankSprite;
             }
             else
             {
-                // If there's no item at this slot, set to blank.
                 slotImage.sprite = blankSprite;
             }
         }
+    }
+
+    /// <summary>
+    /// Shows the UI and makes it interactable.
+    /// </summary>
+    public void Show()
+    {
+        canvasGroup.alpha = 1f;
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
+        isVisible = true;
+    }
+
+    /// <summary>
+    /// Hides the UI and makes it non-interactable.
+    /// </summary>
+    public void Hide()
+    {
+        canvasGroup.alpha = 0f;
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
+        isVisible = false;
+    }
+
+    /// <summary>
+    /// Toggles between Show and Hide at runtime.
+    /// </summary>
+    public void Toggle()
+    {
+        if (isVisible) Hide();
+        else Show();
+    }
+
+    /// <summary>
+    /// Applies the current value of isVisible.
+    /// </summary>
+    private void ApplyVisibility()
+    {
+        if (isVisible) Show();
+        else Hide();
     }
 }

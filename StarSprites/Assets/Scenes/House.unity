@@ -353,6 +353,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 642074379588261120, guid: d3ec41108c5cc374f86a9cbab50536c0, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642074379588261120, guid: d3ec41108c5cc374f86a9cbab50536c0, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642074379588261120, guid: d3ec41108c5cc374f86a9cbab50536c0, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 655523104841893210, guid: d3ec41108c5cc374f86a9cbab50536c0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -451,6 +463,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3829521755295131394, guid: d3ec41108c5cc374f86a9cbab50536c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5456540177428815995, guid: d3ec41108c5cc374f86a9cbab50536c0, type: 3}
+      propertyPath: isVisible
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -675,9 +691,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 360011887923384895, guid: 165fc3c01be6e404db0d362e88cb1e91, type: 3}
+      propertyPath: isVisible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5251118639897747984, guid: 165fc3c01be6e404db0d362e88cb1e91, type: 3}
       propertyPath: m_Name
       value: FurnitureUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968380927583779489, guid: 165fc3c01be6e404db0d362e88cb1e91, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968380927583779489, guid: 165fc3c01be6e404db0d362e88cb1e91, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968380927583779489, guid: 165fc3c01be6e404db0d362e88cb1e91, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8441859380984760301, guid: 165fc3c01be6e404db0d362e88cb1e91, type: 3}
       propertyPath: m_Pivot.x
