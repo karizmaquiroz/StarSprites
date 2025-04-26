@@ -27,7 +27,10 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(GameObject item)
     {
         inventoryItems.Add(item);
-        inventoryUI.RefreshUI();
+        if (inventoryUI != null)
+        {
+            inventoryUI.RefreshUI();
+        }
         Debug.Log("Added to inventory: " + item.name);
     }
 }
