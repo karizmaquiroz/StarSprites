@@ -762,6 +762,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2304457806718807332, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_Color.b
+      value: 0.759434
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304457806718807332, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_Color.g
+      value: 0.39404592
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304457806718807332, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_Color.r
+      value: 0.72761565
+      objectReference: {fileID: 0}
     - target: {fileID: 5489156974525846052, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
       propertyPath: m_Pivot.x
       value: 0
