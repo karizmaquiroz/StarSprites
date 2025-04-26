@@ -9,6 +9,16 @@ public class FurniturePlacer : MonoBehaviour
     // The furniture item currently selected for placement
     private GameObject currentFurniture;
 
+    void Start()
+    {
+        // Ensure the InventoryManager is set
+        inventoryManager = InventoryManager.Instance;
+        if (inventoryManager == null)
+        {
+            Debug.LogError("InventoryManager reference not set on FurniturePlacer.");
+        }
+    }
+
     void Update()
     {
         // If an item is selected, update its position to follow the mouse

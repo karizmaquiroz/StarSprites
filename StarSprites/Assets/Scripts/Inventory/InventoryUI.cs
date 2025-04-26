@@ -16,9 +16,22 @@ public class InventoryUI : MonoBehaviour
 
     [Header("Editor Toggle")]
     [Tooltip("Check to make the inventory UI visible.")]
-    public bool isVisible = false;
+    public bool isVisible = true;
 
     private CanvasGroup canvasGroup;
+
+    private void Start()
+    {
+        // Ensure the InventoryManager is set
+        inventoryManager = InventoryManager.Instance;
+        if (inventoryManager == null)
+        {
+            Debug.LogError("InventoryManager reference not set on InventoryUI.");
+            return;
+        }
+        // Refresh the UI to show the current inventory state
+        RefreshUI();
+    }
 
     void Awake()
     {
@@ -36,25 +49,26 @@ public class InventoryUI : MonoBehaviour
     }
 
     /// <summary>
-    /// Refreshes the inventory icons. Call this after adding/removing items.
+    /// Refreshes the inventory icons—and toggles each slot’s visibility.
     /// </summary>
     public void RefreshUI()
     {
         for (int i = 0; i < inventorySlots.Length; i++)
         {
-            Image slotImage = inventorySlots[i].GetComponent<Image>();
-
-            if (i < inventoryManager.inventoryItems.Count)
+            // If there is an item at this index, show & set icon
+            if (i < inventoryManager.inventoryItems.Count && inventoryManager.inventoryItems[i] != null)
             {
                 var itemGO = inventoryManager.inventoryItems[i];
-                var furnitureItem = itemGO.GetComponent<FurnitureItem>();
-                slotImage.sprite = (furnitureItem != null && furnitureItem.inventoryIcon != null)
-                    ? furnitureItem.inventoryIcon
-                    : blankSprite;
+                var fi = itemGO.GetComponent<FurnitureItem>();
+                var icon = (fi != null && fi.inventoryIcon != null) ? fi.inventoryIcon : blankSprite;
+
+                inventorySlots[i].gameObject.SetActive(true);
+                inventorySlots[i].GetComponent<Image>().sprite = icon;
             }
             else
             {
-                slotImage.sprite = blankSprite;
+                // No item here: hide the entire button
+                inventorySlots[i].gameObject.SetActive(false);
             }
         }
     }

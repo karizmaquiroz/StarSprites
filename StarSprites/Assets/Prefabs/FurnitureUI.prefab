@@ -145,8 +145,8 @@ GameObject:
   - component: {fileID: 3041719155583171568}
   - component: {fileID: 8002510305717842023}
   - component: {fileID: 6654300131336719472}
-  - component: {fileID: 1920469716841661719}
   - component: {fileID: 360011887923384895}
+  - component: {fileID: 7968380927583779489}
   m_Layer: 5
   m_Name: FurnitureUI
   m_TagString: Untagged
@@ -251,21 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968de680b4556cb48928a0abd6861129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 1920469716841661719}
---- !u!114 &1920469716841661719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5251118639897747984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e5d3183af6b454fb419585b1837b4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryItems: []
-  inventoryUI: {fileID: 360011887923384895}
+  inventoryManager: {fileID: 0}
 --- !u!114 &360011887923384895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +269,20 @@ MonoBehaviour:
   - {fileID: 2346264716040029176}
   - {fileID: 6177840231760182210}
   blankSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  inventoryManager: {fileID: 1920469716841661719}
+  inventoryManager: {fileID: 0}
+  isVisible: 1
+--- !u!225 &7968380927583779489
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5251118639897747984}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5423438543073806525
 GameObject:
   m_ObjectHideFlags: 0
