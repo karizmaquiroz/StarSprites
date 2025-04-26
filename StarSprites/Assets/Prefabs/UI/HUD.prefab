@@ -89,6 +89,8 @@ GameObject:
   - component: {fileID: 7812256045886679601}
   - component: {fileID: 5994616164072235629}
   - component: {fileID: 5309621303077176279}
+  - component: {fileID: 642074379588261120}
+  - component: {fileID: 5456540177428815995}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -218,6 +220,35 @@ MonoBehaviour:
   currentXP: 0
   maxXP: 100
   level: 1
+  abilityIcons:
+  - {fileID: 5788831679364877923}
+  - {fileID: 3983224780409080658}
+  - {fileID: 4757964255639368315}
+--- !u!225 &642074379588261120
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255250084361495945}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &5456540177428815995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255250084361495945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e665fd156d0b22418b43290467bcb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 1
 --- !u!1 &1930145364987740153
 GameObject:
   m_ObjectHideFlags: 0

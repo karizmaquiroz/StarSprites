@@ -7,6 +7,7 @@ TagManager:
   - CameraTrigger
   - Enemy
   - Bullet
+  - Ward
   layers:
   - Default
   - TransparentFX

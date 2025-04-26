@@ -10,6 +10,9 @@ public class XPBarBehavior : MonoBehaviour
     public int maxXP = 100;
     public int level = 1;
 
+    [Header("Ability Icons")]
+    public GameObject[] abilityIcons; // Assign 3 icons in inspector
+
     private void Awake()
     {
         if (Instance == null)
@@ -30,6 +33,8 @@ public class XPBarBehavior : MonoBehaviour
 
         xpSlider.maxValue = maxXP;
         xpSlider.value = currentXP;
+
+        UpdateAbilityIcons(); // Set correct icons on start
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,7 +48,7 @@ public class XPBarBehavior : MonoBehaviour
     public void GainXP(int amount)
     {
         currentXP += amount;
-        if (currentXP > maxXP)
+        if (currentXP >= maxXP)
         {
             LevelUp();
         }
@@ -56,6 +61,16 @@ public class XPBarBehavior : MonoBehaviour
         currentXP = 0;
         maxXP += 50; // Increase XP cap per level
         xpSlider.maxValue = maxXP;
-        Debug.Log("Level Up!");
+
+        Debug.Log("Level Up! Now level: " + level);
+        UpdateAbilityIcons();
+    }
+
+    void UpdateAbilityIcons()
+    {
+        for (int i = 0; i < abilityIcons.Length; i++)
+        {
+            abilityIcons[i].SetActive(level > i);
+        }
     }
 }

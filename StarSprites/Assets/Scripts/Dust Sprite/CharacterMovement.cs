@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +9,9 @@ public class CharacterMovement : MonoBehaviour
     public Transform groundCheck;
     public List<LayerMask> groundLayers = new List<LayerMask>();
 
-    public GameObject projectilePrefab;
+    public GameObject projectilePrefab;         // Ability 1
+    public GameObject spreadProjectilePrefab;   // Ability 2
+    public GameObject bigStarPrefab;            // Ability 3
     public Transform firePoint;
     public float projectileSpeed = 10f;
 
@@ -20,10 +21,10 @@ public class CharacterMovement : MonoBehaviour
     private int maxJumps = 2;
     public GameObject shotpoint;
     public bool isFacingRight;
-    
-    private bool isStunned = false;
 
-   //animator (lis)
+    private bool isStunned = false;
+    private int selectedAbility = 1;
+
     Animator animator;
     SpriteRenderer spriteRenderer;
 
@@ -38,11 +39,11 @@ public class CharacterMovement : MonoBehaviour
     {
         if (isStunned)
         {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Optional: freeze horizontal movement
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
             animator.SetFloat("walking", 0f);
             return;
         }
-        
+
         float moveInput = Input.GetAxis("Horizontal");
         animator.SetFloat("walking", Mathf.Abs(moveInput));
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
@@ -52,34 +53,21 @@ public class CharacterMovement : MonoBehaviour
             spriteRenderer.flipX = true;
             shotpoint.transform.localPosition = new Vector3(9.4f, 0f, 0f);
             isFacingRight = true;
-            //add SOundEffectManager.Play("PlayerMovement");
         }
         else if (moveInput < 0)
         {
             spriteRenderer.flipX = false;
             shotpoint.transform.localPosition = new Vector3(-9.4f, 0f, 0f);
             isFacingRight = false;
-            //add SOundEffectManager.Play("PlayerMovement");
         }
 
-        if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[0]) || Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[1]))
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
-        
-        if (isGrounded)
-        {
-            jumpCount = 0;
-        }
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[0]) ||
+                     Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayers[1]);
 
-        if (rb.linearVelocityY == 0 && isGrounded)
-        {
+        if (isGrounded) jumpCount = 0;
+
+        if (rb.linearVelocity.y == 0 && isGrounded)
             animator.SetTrigger("isGrounded");
-        }
 
         if (Input.GetButtonDown("Jump") && jumpCount < maxJumps)
         {
@@ -87,20 +75,33 @@ public class CharacterMovement : MonoBehaviour
             jumpCount++;
             animator.SetTrigger("jumping");
         }
-        if (rb.linearVelocity.y > 0)
-        {
-            rb.gravityScale = 2f;
-        }
-        else
-        {
-            rb.gravityScale = 4f;
-        }
+
+        rb.gravityScale = rb.linearVelocity.y > 0 ? 2f : 4f;
+
+        // Ability Selection (keys 1-3)
+        if (Input.GetKeyDown(KeyCode.Alpha1)) selectedAbility = 1;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) selectedAbility = 2;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) selectedAbility = 3;
+
+        int level = XPBarBehavior.Instance.level;
+
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            switch (selectedAbility)
+            {
+                case 1:
+                    if (level >= 1) Shoot();
+                    break;
+                case 2:
+                    if (level >= 2) SpreadFire();
+                    break;
+                case 3:
+                    if (level >= 3) ExplosiveStar();
+                    break;
+            }
         }
     }
-    
+
     public void Stun(float duration)
     {
         if (!isStunned)
@@ -110,42 +111,43 @@ public class CharacterMovement : MonoBehaviour
     private IEnumerator StunRoutine(float duration)
     {
         isStunned = true;
-        // Disable movement here
         Debug.Log("Player is stunned!");
         yield return new WaitForSeconds(duration);
         isStunned = false;
-        // Re-enable movement here
     }
-    
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Enemy"))
-    //    {
-    //        StartCoroutine(TakeDamageAfterDelay(1f));
-    //    }
-    //}
-    //IEnumerator TakeDamageAfterDelay(float delay)
-    //{
-    //    yield return new WaitForSeconds(delay);
-    //    Debug.Log("Taking damage now!");
-    //    HealthBarManager.Instance.TakeDamage(25);
-    //}
-    
+
     void Shoot()
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            if (isFacingRight)
-            {
-                rb.linearVelocity = new Vector2(projectileSpeed, 0f);
-            }
-            else
-            {
-                rb.linearVelocity = new Vector2(-projectileSpeed, 0f);
-            }
-                Destroy(projectile, 5f);
+            rb.linearVelocity = new Vector2(isFacingRight ? projectileSpeed : -projectileSpeed, 0f);
+            Destroy(projectile, 5f);
         }
+    }
+
+    void SpreadFire()
+    {
+        float[] angles = { 15f, 0f, -15f };
+
+        foreach (float angle in angles)
+        {
+            GameObject star = Instantiate(spreadProjectilePrefab, firePoint.position, Quaternion.identity);
+            Rigidbody2D rb = star.GetComponent<Rigidbody2D>();
+
+            float direction = isFacingRight ? 1 : -1;
+            Vector2 baseDirection = new Vector2(direction, Mathf.Tan(angle * Mathf.Deg2Rad));
+            rb.linearVelocity = baseDirection.normalized * projectileSpeed;
+            Destroy(star, 5f);
+        }
+    }
+
+    void ExplosiveStar()
+    {
+        GameObject bigStar = Instantiate(bigStarPrefab, firePoint.position, Quaternion.identity);
+        Rigidbody2D rb = bigStar.GetComponent<Rigidbody2D>();
+        rb.linearVelocity = new Vector2(isFacingRight ? projectileSpeed : -projectileSpeed, 0f);
+        Destroy(bigStar, 5f);
     }
 }
