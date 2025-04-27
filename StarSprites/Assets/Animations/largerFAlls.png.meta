@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 08bc0aac1c88d6349a35fb500220f823
+guid: 04b799809855b2940a97caa6cb7cd697
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4483270901623326340
-    second: Untitled_Artwork (10)_0
+      213: -3133358991220990613
+    second: largerFAlls_0
+  - first:
+      213: 6932593897331356519
+    second: largerFAlls_1
+  - first:
+      213: -615850878156276809
+    second: largerFAlls_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,104 +102,71 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork (10)_0
+      name: largerFAlls_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 68
-        height: 68
+        x: 1237
+        y: 1241
+        width: 350
+        height: 1643
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -33, y: 3}
-        - {x: -33, y: -13}
-        - {x: -27, y: -21}
-        - {x: -20, y: -28}
-        - {x: -8, y: -34}
-        - {x: 7, y: -34}
-        - {x: 19, y: -29}
-        - {x: 29, y: -18}
-        - {x: 32, y: -9}
-        - {x: 34, y: 7}
-        - {x: 33, y: 8}
-        - {x: 32, y: 13}
-        - {x: 29, y: 18}
-        - {x: 25, y: 23}
-        - {x: 19, y: 29}
-        - {x: 13, y: 32}
-        - {x: 8, y: 33}
-        - {x: -9, y: 33}
-        - {x: -12, y: 32}
-        - {x: -24, y: 24}
-        - {x: -32, y: 14}
-      physicsShape:
-      - - {x: 8, y: -34}
-        - {x: 22, y: -27}
-        - {x: 29, y: -17}
-        - {x: 31, y: -11}
-        - {x: 33, y: -8}
-        - {x: 33, y: -3}
-        - {x: 34, y: 6}
-        - {x: 33, y: 8}
-        - {x: 31, y: 15}
-        - {x: 28, y: 17}
-        - {x: 27, y: 20}
-        - {x: 23, y: 25}
-        - {x: 19, y: 28}
-        - {x: 14, y: 31}
-        - {x: 9, y: 33}
-        - {x: -9, y: 33}
-        - {x: -16, y: 31}
-        - {x: -21, y: 28}
-        - {x: -26, y: 23}
-        - {x: -31, y: 16}
-        - {x: -33, y: 10}
-        - {x: -33, y: -10}
-        - {x: -25, y: -24}
-        - {x: -16, y: -31}
-        - {x: -11, y: -31}
-        - {x: -8, y: -34}
-      - - {x: 33, y: -5}
-        - {x: 33, y: -5}
-        - {x: 33, y: -4}
-        - {x: 33, y: -4}
-      tessellationDetail: 0
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: 4868a13b127c73e30800000000000000
-      internalID: 4483270901623326340
+      spriteID: b6d1f7649921484d0800000000000000
+      internalID: -3133358991220990613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: largerFAlls_1
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 1247
+        width: 351
+        height: 1643
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763f97e4b65853060800000000000000
+      internalID: 6932593897331356519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: largerFAlls_2
+      rect:
+        serializedVersion: 2
+        x: 1996
+        y: 1246
+        width: 340
+        height: 1643
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bbf1e4a3ee0477f0800000000000000
+      internalID: -615850878156276809
       vertices: []
       indices: 
       edges: []
@@ -202,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 99f223d711b3d8e49beaf588c981a4f1
+    spriteID: 030bc0e17699daf43bfa0e8bfe7375da
     internalID: 0
     vertices: []
     indices: 
@@ -212,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled_Artwork (10)_0: 4483270901623326340
+      largerFAlls_0: -3133358991220990613
+      largerFAlls_1: 6932593897331356519
+      largerFAlls_2: -615850878156276809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

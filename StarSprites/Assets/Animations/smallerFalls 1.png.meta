@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 0d06557770f0eef44a28db3d0eeee57b
+guid: 6bed06e411d9d7b4487e6cf14c616c60
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5225288133576051036
-    second: scrolliconpixel_0
+      213: 5275803065243321203
+    second: smallerFalls_0
+  - first:
+      213: -2743343978476073582
+    second: smallerFalls_1
+  - first:
+      213: -3184216974523175025
+    second: smallerFalls_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,17 +52,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.699185, y: 0.48377836}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 826, y: 132, z: 278, w: 181}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -96,63 +102,90 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scrolliconpixel_0
+      name: smallerFalls_0
       rect:
         serializedVersion: 2
-        x: 450
-        y: 113
-        width: 977
-        height: 824
+        x: 277
+        y: 1380
+        width: 230
+        height: 1505
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c594dda6fd3f38840800000000000000
-      internalID: 5225288133576051036
+      spriteID: 373ceb87fea673940800000000000000
+      internalID: 5275803065243321203
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline: []
+    - serializedVersion: 2
+      name: smallerFalls_1
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1385
+        width: 238
+        height: 1503
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d0a3abf2fade9d0800000000000000
+      internalID: -2743343978476073582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smallerFalls_2
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 1384
+        width: 234
+        height: 1499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8fe6c948836fc3d0800000000000000
+      internalID: -3184216974523175025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: 156, y: -776.5}
+      - {x: 390, y: -775.5}
+      - {x: 390, y: 724.5}
+      - {x: 157, y: 724.5}
     customData: 
-    physicsShape: []
+    physicsShape:
+    - - {x: 391, y: 726.5}
+      - {x: 156, y: 726.5}
+      - {x: 156, y: -775.5}
+      - {x: 158, y: -777.5}
+      - {x: 391, y: -777.5}
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 6cd4c451ed72e2d418480473670cf989
+    internalID: 1952275243
     vertices: []
     indices: 
     edges: []
@@ -161,7 +194,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      scrolliconpixel_0: 5225288133576051036
+      smallerFalls_0: 5275803065243321203
+      smallerFalls_1: -2743343978476073582
+      smallerFalls_2: -3184216974523175025
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
