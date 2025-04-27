@@ -70,11 +70,26 @@ public class FurniturePlacer : MonoBehaviour
         {
             currentFurniture.transform.position = hit.point;
         }
+        SaveFurniturePlacement();
     }
 
     // Prevents placing the item when clicking UI elements.
     bool IsPointerOverUI()
     {
         return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
+    }
+
+    void SaveFurniturePlacement()
+    {
+        var placement = new GameSaveData.FurniturePlacement
+        {
+            furnitureID = currentFurniture.name,
+            x = currentFurniture.transform.position.x,
+            y = currentFurniture.transform.position.y,
+            z = currentFurniture.transform.position.z
+        };
+        SaveManager.Instance.currentData.furniturePlacements.Add(placement);
+        SaveManager.Instance.currentData.furnitureCollected = SaveManager.Instance.currentData.furniturePlacements.Count;
+        SaveManager.Instance.SaveGame();
     }
 }
