@@ -97,7 +97,7 @@ MonoBehaviour:
   diveSpeed: 5
   maxFallSpeed: -3
   despawnTime: 5
-  spawner: {fileID: 2636976407746269246, guid: 3c85ea8ab51a670488a304587e2ea48c, type: 3}
+  spawner: {fileID: 0}
 --- !u!50 &1538032847029863437
 Rigidbody2D:
   serializedVersion: 5

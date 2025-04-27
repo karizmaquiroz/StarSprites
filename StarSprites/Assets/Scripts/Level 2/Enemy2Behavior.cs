@@ -8,7 +8,7 @@ public class Enemy2Behavior : MonoBehaviour
     public float despawnTime = 5f;
 
     private Rigidbody2D rb;
-    private Transform player;
+    public Transform player;
     private BirdSpawner spawner;
     private bool alreadyExploded = false;
 
@@ -54,6 +54,7 @@ public class Enemy2Behavior : MonoBehaviour
 
         if (collision.collider.CompareTag("Player"))
         {
+            HealthBarManager.Instance.TakeDamage(10);
             Explode(false);
         }
     }
@@ -73,16 +74,12 @@ public class Enemy2Behavior : MonoBehaviour
     {
         if (alreadyExploded) return;
         alreadyExploded = true;
-
         Debug.Log("Explode called. KilledByPlayer: " + killedByPlayer);
-
         if (explosionEffect != null)
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
-
         if (killedByPlayer)
         {
             Debug.Log("Killed by player!");
-
             if (spawner != null)
             {
                 Debug.Log("Calling spawner.OnBirdKilledByPlayer()");
@@ -96,6 +93,7 @@ public class Enemy2Behavior : MonoBehaviour
 
         Destroy(gameObject);
     }
+
 
     void Despawn()
     {

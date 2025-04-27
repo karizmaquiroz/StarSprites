@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0d06557770f0eef44a28db3d0eeee57b
+guid: a121c7a158dba8b4d88a0bb11f3f9cc4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5225288133576051036
-    second: scrolliconpixel_0
+      213: 7141765067525904753
+    second: Untitled design (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scrolliconpixel_0
+      name: Untitled design (1)_0
       rect:
         serializedVersion: 2
-        x: 450
-        y: 113
-        width: 977
-        height: 824
+        x: 61
+        y: 107
+        width: 960
+        height: 866
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c594dda6fd3f38840800000000000000
-      internalID: 5225288133576051036
+      spriteID: 179dc2f7d75ac1360800000000000000
+      internalID: 7141765067525904753
       vertices: []
       indices: 
       edges: []
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      scrolliconpixel_0: 5225288133576051036
+      Untitled design (1)_0: 7141765067525904753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

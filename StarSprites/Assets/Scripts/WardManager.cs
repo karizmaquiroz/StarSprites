@@ -39,12 +39,75 @@ public class WardManager : MonoBehaviour
         {
             case 1:
                 level1Complete = true;
+                if (!SaveManager.Instance.currentData.levelsCompleted.Contains(1))
+                {
+                    SaveManager.Instance.currentData.levelsCompleted.Add(1);
+                    var progress = SaveManager.Instance.currentData.levelProgress.Find(x => x.levelIndex == 1);
+                    if (progress != null)
+                    {
+                        progress = new GameSaveData.LevelProgress
+                        {
+                            levelIndex = 1,
+                            allEnemiesKilled = true,
+                            bossKilled = true,
+                            wardCollected = true
+                        };
+                    }
+                        Debug.Log("Level 1 completed and saved.");
+                }
+                SaveManager.Instance.currentData.playerHealth = HealthBarManager.Instance.health;
+                SaveManager.Instance.currentData.playerHearts = HealthBarManager.Instance.heartsRemaining;
+                SaveManager.Instance.currentData.playerLevel = XPBarBehavior.Instance.level;
+                SaveManager.Instance.currentData.playerXP = XPBarBehavior.Instance.currentXP;
+                SaveManager.Instance.SaveGame();
                 break;
             case 2:
                 level2Complete = true;
+                if (!SaveManager.Instance.currentData.levelsCompleted.Contains(2))
+                {
+                    SaveManager.Instance.currentData.levelsCompleted.Add(2);
+                    var progress = SaveManager.Instance.currentData.levelProgress.Find(x => x.levelIndex == 2);
+                    if (progress != null)
+                    {
+                        progress = new GameSaveData.LevelProgress
+                        {
+                            levelIndex = 2,
+                            allEnemiesKilled = true,
+                            bossKilled = true,
+                            wardCollected = true
+                        };
+                    }
+                    Debug.Log("Level 2 completed and saved.");
+                }
+                SaveManager.Instance.currentData.playerHealth = HealthBarManager.Instance.health;
+                SaveManager.Instance.currentData.playerHearts = HealthBarManager.Instance.heartsRemaining;
+                SaveManager.Instance.currentData.playerLevel = XPBarBehavior.Instance.level;
+                SaveManager.Instance.currentData.playerXP = XPBarBehavior.Instance.currentXP;
+                SaveManager.Instance.SaveGame();
                 break;
             case 3:
                 level3Complete = true;
+                if (!SaveManager.Instance.currentData.levelsCompleted.Contains(3))
+                {
+                    SaveManager.Instance.currentData.levelsCompleted.Add(3);
+                    var progress = SaveManager.Instance.currentData.levelProgress.Find(x => x.levelIndex == 3);
+                    if (progress != null)
+                    {
+                        progress = new GameSaveData.LevelProgress
+                        {
+                            levelIndex = 3,
+                            allEnemiesKilled = true,
+                            bossKilled = true,
+                            wardCollected = true
+                        };
+                    }
+                    Debug.Log("Level 3 completed and saved.");
+                }
+                SaveManager.Instance.currentData.playerHealth = HealthBarManager.Instance.health;
+                SaveManager.Instance.currentData.playerHearts = HealthBarManager.Instance.heartsRemaining;
+                SaveManager.Instance.currentData.playerLevel = XPBarBehavior.Instance.level;
+                SaveManager.Instance.currentData.playerXP = XPBarBehavior.Instance.currentXP;
+                SaveManager.Instance.SaveGame();
                 break;
         }
 
