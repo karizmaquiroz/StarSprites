@@ -30,6 +30,7 @@ public class LorebookManager : MonoBehaviour
             unlockedLorePages[pageNumber] = loreText;
             PlayerPrefs.SetString(PlayerPrefsKey + pageNumber, loreText);
             PlayerPrefs.Save();
+            SaveLorePages(pageNumber);
         }
     }
 
@@ -54,6 +55,15 @@ public class LorebookManager : MonoBehaviour
             {
                 unlockedLorePages[i] = PlayerPrefs.GetString(PlayerPrefsKey + i);
             }
+        }
+    }
+
+    private void SaveLorePages(int page)
+    {
+        if (!SaveManager.Instance.currentData.lorePagesCollected.Contains(page))
+        {
+            SaveManager.Instance.currentData.lorePagesCollected.Add(page);
+            SaveManager.Instance.SaveGame();
         }
     }
 }
