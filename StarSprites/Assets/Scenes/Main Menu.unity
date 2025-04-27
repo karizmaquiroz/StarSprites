@@ -874,6 +874,34 @@ PrefabInstance:
       propertyPath: CreditUI
       value: 
       objectReference: {fileID: 4990829169299988007, guid: b91981621ffb7544da32d65d3d42cc70, type: 3}
+    - target: {fileID: 7950397554214854820, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950397554214854820, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950397554214854820, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1775233812041688804, guid: 6cc99d5f27f0015459aa0fa78575ec69, type: 3}
+    - target: {fileID: 7950397554214854820, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950397554214854820, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950397554214854820, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SaveManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950397554214854820, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8964025991240796237, guid: 5cb7e6b939712bf4fb8f002996c4a628, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -53
