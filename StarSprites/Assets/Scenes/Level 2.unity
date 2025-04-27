@@ -1385,6 +1385,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7892282360705583560}
     - target: {fileID: 8254766935733194907, guid: 6cc99d5f27f0015459aa0fa78575ec69, type: 3}
+      propertyPath: currentLevelIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254766935733194907, guid: 6cc99d5f27f0015459aa0fa78575ec69, type: 3}
       propertyPath: enemyList.Array.size
       value: 1
       objectReference: {fileID: 0}
