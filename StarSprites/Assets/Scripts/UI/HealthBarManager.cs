@@ -11,9 +11,9 @@ public class HealthBarManager : MonoBehaviour
     public Sprite emptyHeart;
     public Slider healthBar;
     
-    public int health = 100;
+    private int health = 100;
     private int maxHealth = 100;
-    public int heartsRemaining;
+    private int heartsRemaining;
 
     private void Awake()
     {

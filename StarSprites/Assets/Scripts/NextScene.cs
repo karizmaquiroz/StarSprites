@@ -17,10 +17,6 @@ public class NextScene : MonoBehaviour
     [Header("Ward")]
     public GameObject ward;
 
-    [Header("Current Level")]
-    [Tooltip("Set the current level index (1, 2, or 3)")]
-    public int currentLevelIndex = 1;
-
     private bool bossCleared = false;
     private bool bossActivated = false;
     private bool bossDefeated = false;
@@ -50,24 +46,9 @@ public class NextScene : MonoBehaviour
                     break;
                 }
             }
-            Debug.Log(allEnemiesInactive);
+
             if (allEnemiesInactive)
             {
-                var progress = SaveManager.Instance.currentData.levelProgress.Find(x => x.levelIndex == currentLevelIndex);
-                if (progress != null)
-                {
-                    progress = new GameSaveData.LevelProgress {
-                        levelIndex = currentLevelIndex,
-                        allEnemiesKilled = true,
-                        bossKilled = false,
-                        wardCollected = false
-                    };
-                    SaveManager.Instance.currentData.playerHealth = HealthBarManager.Instance.health;
-                    SaveManager.Instance.currentData.playerHearts = HealthBarManager.Instance.heartsRemaining;
-                    SaveManager.Instance.currentData.playerLevel = XPBarBehavior.Instance.level;
-                    SaveManager.Instance.currentData.playerXP = XPBarBehavior.Instance.currentXP;
-                    SaveManager.Instance.SaveGame();
-                }
                 bossCleared = true;
                 if (bossTriggerZone != null)
                 {
@@ -78,7 +59,6 @@ public class NextScene : MonoBehaviour
                 else
                 {
                     // Fallback: if no trigger assigned, activate boss immediately
-                    Debug.Log("Boss activated");
                     ActivateBoss();
                 }
             }
@@ -88,17 +68,6 @@ public class NextScene : MonoBehaviour
             // Check if boss has been defeated (destroyed or inactive)
             if (boss == null || !boss.activeInHierarchy)
             {
-                var progress = SaveManager.Instance.currentData.levelProgress.Find(x => x.levelIndex == currentLevelIndex);
-                if (progress != null)
-                {
-                    progress.bossKilled = true;
-                    progress.wardCollected = false;
-                    SaveManager.Instance.SaveGame();
-                }
-                SaveManager.Instance.currentData.playerHealth = HealthBarManager.Instance.health;
-                SaveManager.Instance.currentData.playerHearts = HealthBarManager.Instance.heartsRemaining;
-                SaveManager.Instance.currentData.playerLevel = XPBarBehavior.Instance.level;
-                SaveManager.Instance.currentData.playerXP = XPBarBehavior.Instance.currentXP;
                 TriggerWard();
             }
         }

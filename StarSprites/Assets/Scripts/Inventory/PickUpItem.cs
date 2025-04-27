@@ -3,14 +3,13 @@ using UnityEngine;
 public class PickUpItem : MonoBehaviour
 {
     // When something enters the trigger collider attached to this GameObject
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         // Check if the colliding object is tagged as "Player"
         if (other.CompareTag("Player"))
         {
             // Get the InventoryManager component from the player
             InventoryManager inventory = other.GetComponent<InventoryManager>();
-            Debug.Log(inventory);
             if (inventory != null)
             {
                 // Add this item to the inventory

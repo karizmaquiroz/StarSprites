@@ -8,47 +8,42 @@ public class BirdSpawner : MonoBehaviour
     public float spawnInterval = 2f;
 
     private bool playerKilledABird = false;
+    private Coroutine spawnCoroutine;
 
     void Start()
     {
-        StartCoroutine(SpawnLoop());
+        spawnCoroutine = StartCoroutine(SpawnLoop());
     }
 
     IEnumerator SpawnLoop()
     {
-        Debug.Log(playerKilledABird + "in SpawnLoop");
-        while (!playerKilledABird)
+        while (true)
         {
-            SpawnBird();
-
-            float elapsed = 0f;
-            while (elapsed < spawnInterval)
+            //Check BEFORE spawning
+            if (playerKilledABird)
             {
-                if (playerKilledABird)
-                {
-                    Debug.Log("Stopped during wait — exiting loop.");
-                    yield break;
-                }
-
-                elapsed += Time.deltaTime;
-                yield return null;
+                Debug.Log("Stopping bird spawner...");
+                yield break; // Stops the coroutine immediately
             }
+
+            SpawnBird();
+            yield return new WaitForSeconds(spawnInterval);
         }
-
-        Debug.Log("Loop ended naturally.");
     }
-
 
     void SpawnBird()
     {
-        Debug.Log("Spawning bird");
         Instantiate(birdPrefab, spawnPoint.position, Quaternion.identity);
     }
 
     public void OnBirdKilledByPlayer()
     {
         playerKilledABird = true;
-        Debug.Log("OnBirdKilledByPlayer CALLED");
+
+        if (spawnCoroutine != null)
+        {
+            StopCoroutine(spawnCoroutine);
+        }
         gameObject.SetActive(false);
     }
 }
