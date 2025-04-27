@@ -1,15 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class LorebookUI : MonoBehaviour
 {
-    public Text loreTextUI;
+    public TextMeshProUGUI loreTextUI;
     public int currentPage = 1;
     public int maxPages = 10;
+    private GameObject FurnitureUI;
 
     void Start()
     {
         ShowPage(currentPage);
+        FurnitureUI = GameObject.Find("FurnitureUI");
+        if (FurnitureUI != null)
+        {
+            Debug.Log("Found FurnitureUI GameObject");
+            FurnitureUI.SetActive(false);
+        }
     }
 
     public void ShowPage(int pageNumber)
@@ -38,6 +45,15 @@ public class LorebookUI : MonoBehaviour
         if (currentPage > 1)
         {
             ShowPage(currentPage - 1);
+        }
+    }
+
+    public void CloseLorebook()
+    {
+        gameObject.SetActive(false);
+        if (FurnitureUI != null)
+        {
+            FurnitureUI.SetActive(true);
         }
     }
 }
