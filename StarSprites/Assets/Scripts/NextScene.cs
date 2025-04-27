@@ -62,6 +62,10 @@ public class NextScene : MonoBehaviour
                         bossKilled = false,
                         wardCollected = false
                     };
+                    SaveManager.Instance.currentData.playerHealth = HealthBarManager.Instance.health;
+                    SaveManager.Instance.currentData.playerHearts = HealthBarManager.Instance.heartsRemaining;
+                    SaveManager.Instance.currentData.playerLevel = XPBarBehavior.Instance.level;
+                    SaveManager.Instance.currentData.playerXP = XPBarBehavior.Instance.currentXP;
                     SaveManager.Instance.SaveGame();
                 }
                 bossCleared = true;
@@ -91,6 +95,10 @@ public class NextScene : MonoBehaviour
                     progress.wardCollected = false;
                     SaveManager.Instance.SaveGame();
                 }
+                SaveManager.Instance.currentData.playerHealth = HealthBarManager.Instance.health;
+                SaveManager.Instance.currentData.playerHearts = HealthBarManager.Instance.heartsRemaining;
+                SaveManager.Instance.currentData.playerLevel = XPBarBehavior.Instance.level;
+                SaveManager.Instance.currentData.playerXP = XPBarBehavior.Instance.currentXP;
                 TriggerWard();
             }
         }

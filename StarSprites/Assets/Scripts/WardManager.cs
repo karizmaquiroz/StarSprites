@@ -55,6 +55,10 @@ public class WardManager : MonoBehaviour
                     }
                         Debug.Log("Level 1 completed and saved.");
                 }
+                SaveManager.Instance.currentData.playerHealth = HealthBarManager.Instance.health;
+                SaveManager.Instance.currentData.playerHearts = HealthBarManager.Instance.heartsRemaining;
+                SaveManager.Instance.currentData.playerLevel = XPBarBehavior.Instance.level;
+                SaveManager.Instance.currentData.playerXP = XPBarBehavior.Instance.currentXP;
                 SaveManager.Instance.SaveGame();
                 break;
             case 2:
@@ -75,6 +79,10 @@ public class WardManager : MonoBehaviour
                     }
                     Debug.Log("Level 2 completed and saved.");
                 }
+                SaveManager.Instance.currentData.playerHealth = HealthBarManager.Instance.health;
+                SaveManager.Instance.currentData.playerHearts = HealthBarManager.Instance.heartsRemaining;
+                SaveManager.Instance.currentData.playerLevel = XPBarBehavior.Instance.level;
+                SaveManager.Instance.currentData.playerXP = XPBarBehavior.Instance.currentXP;
                 SaveManager.Instance.SaveGame();
                 break;
             case 3:
@@ -95,6 +103,10 @@ public class WardManager : MonoBehaviour
                     }
                     Debug.Log("Level 3 completed and saved.");
                 }
+                SaveManager.Instance.currentData.playerHealth = HealthBarManager.Instance.health;
+                SaveManager.Instance.currentData.playerHearts = HealthBarManager.Instance.heartsRemaining;
+                SaveManager.Instance.currentData.playerLevel = XPBarBehavior.Instance.level;
+                SaveManager.Instance.currentData.playerXP = XPBarBehavior.Instance.currentXP;
                 SaveManager.Instance.SaveGame();
                 break;
         }
