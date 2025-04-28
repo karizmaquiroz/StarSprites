@@ -16,7 +16,7 @@ public class Enemy3Behavior : MonoBehaviour
     public CharacterMovement playerController;
     public float flashDuration = 0.1f;
 
-    private SpriteRenderer spriteRenderer;
+    SpriteRenderer spriteRenderer;
     private Color originalColor;
 
     private Vector2 patrolStart;
@@ -29,8 +29,12 @@ public class Enemy3Behavior : MonoBehaviour
     private enum State { Patrolling, Chasing, Attacking, Retreating, Cooldown }
     private State currentState = State.Patrolling;
 
+    //animator
+    Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         rb = GetComponent<Rigidbody2D>();
         patrolStart = transform.position;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -116,6 +120,8 @@ public class Enemy3Behavior : MonoBehaviour
         {
             Debug.Log("Enemy attack #" + (i + 1));
             // play animation or trigger effect here
+            animator.SetTrigger("playerContact");
+
             yield return new WaitForSeconds(0.5f); // time between attacks
         }
 
