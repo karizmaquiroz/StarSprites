@@ -27,6 +27,8 @@ public class BossOneScript : MonoBehaviour
 
     private bool isEnraged = false;
     private bool isPerformingSpecialAttack = false;
+    private bool isAttacking = false;
+
 
     private Rigidbody2D rb;
 
@@ -114,11 +116,14 @@ public class BossOneScript : MonoBehaviour
 
     void ChasePlayer()
     {
+        if (isAttacking || isPerformingSpecialAttack)
+            return; // Don't move while attacking or special attacking
+
         float step = chaseSpeed * Time.deltaTime;
         Vector3 newPosition = Vector2.MoveTowards(transform.position, player.position, step);
 
-        // Flip the bear to face the direction it is moving
-        if ((newPosition.x < transform.position.x && facingRight) || (newPosition.x > transform.position.x && !facingRight))
+        if ((newPosition.x < transform.position.x && facingRight) ||
+            (newPosition.x > transform.position.x && !facingRight))
         {
             Flip();
         }
@@ -131,9 +136,10 @@ public class BossOneScript : MonoBehaviour
         }
     }
 
+
     void Attack()
     {
-        if (attackCooldownTimer <= 0 && !isPerformingSpecialAttack)
+        if (attackCooldownTimer <= 0 && !isPerformingSpecialAttack && !isAttacking)
         {
             if (isEnraged)
             {
@@ -148,11 +154,13 @@ public class BossOneScript : MonoBehaviour
                 Debug.Log("Enemy attacks with a bite!");
                 animator.SetTrigger("playerContact");
                 healthBarManager.TakeDamage(10);
+                StartCoroutine(EndAttackAfterDelay(0.5f)); // <- wait a short time before chasing again
             }
 
             attackCooldownTimer = attackCooldown;
         }
     }
+
 
     IEnumerator DoChargeAttack()
     {
@@ -188,6 +196,14 @@ public class BossOneScript : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         isPerformingSpecialAttack = false;
     }
+
+    IEnumerator EndAttackAfterDelay(float delay)
+    {
+        isAttacking = true;
+        yield return new WaitForSeconds(delay);
+        isAttacking = false;
+    }
+
 
     public void TakeDamage(int damage)
     {
