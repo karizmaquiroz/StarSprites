@@ -6759,6 +6759,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dust
       objectReference: {fileID: 0}
+    - target: {fileID: 8973131331364172482, guid: a92bac32e9d5de04d86a021a0b924432, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

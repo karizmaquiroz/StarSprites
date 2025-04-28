@@ -32,9 +32,14 @@ public class BossOneScript : MonoBehaviour
 
     public HealthBarManager healthBarManager; // Reference to the HealthBarManager script
 
+    //animator
+    Animator animator;
+    SpriteRenderer spriteRenderer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         targetPoint = pointA.position;
         currentHealth = maxHealth;
@@ -141,6 +146,7 @@ public class BossOneScript : MonoBehaviour
             else
             {
                 Debug.Log("Enemy attacks with a bite!");
+                animator.SetTrigger("playerContact");
                 healthBarManager.TakeDamage(10);
             }
 
