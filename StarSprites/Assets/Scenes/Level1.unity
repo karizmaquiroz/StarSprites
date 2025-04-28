@@ -2391,7 +2391,7 @@ Transform:
   m_GameObject: {fileID: 824556509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.368044, y: 18.230001, z: -10}
+  m_LocalPosition: {x: -18.328787, y: 18.230001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3648,7 +3648,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1328782779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3683,7 +3683,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.09067631, y: 0.054403543}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3693,7 +3693,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 12.134491, y: 12.207024}
   m_EdgeRadius: 0
 --- !u!114 &1328782780
 MonoBehaviour:
@@ -3710,7 +3710,7 @@ MonoBehaviour:
   patrolSpeed: 10
   chaseSpeed: 15
   detectionRange: 50
-  attackRange: 10
+  attackRange: 20
   attackCooldown: 2
   pointA: {fileID: 650524766}
   pointB: {fileID: 1576165924}
@@ -3784,7 +3784,7 @@ Transform:
   m_GameObject: {fileID: 1328782777}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.1, y: 6.7, z: 0}
+  m_LocalPosition: {x: 87.1, y: 9.08, z: 0}
   m_LocalScale: {x: 1.49, y: 1.49, z: 1.49}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5567,7 +5567,7 @@ Transform:
   m_GameObject: {fileID: 1980307863}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.368044, y: 18.230001, z: -10}
+  m_LocalPosition: {x: -18.328787, y: 18.230001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
