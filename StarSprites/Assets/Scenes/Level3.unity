@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &15193219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8636409773754441577, guid: 17e1aea3cd84a704194e8aa1a7c994f5, type: 3}
+  m_PrefabInstance: {fileID: 113326178}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &85188979
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,10 +618,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3211908873763938674, guid: 17e1aea3cd84a704194e8aa1a7c994f5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1839694715666097623, guid: 17e1aea3cd84a704194e8aa1a7c994f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1058358554}
   m_SourcePrefab: {fileID: 100100000, guid: 17e1aea3cd84a704194e8aa1a7c994f5, type: 3}
 --- !u!1001 &523637325
 PrefabInstance:
@@ -746,6 +761,11 @@ MonoBehaviour:
     his return\r\n\r\nMountain and Sky,\r\nSun and Moon\r\nTogether once before,\r\nNow
     nevermore\r\n\r\nAbr\xE1zanos de nuevo, Valle,\r\nOnly the light may change your
     fate\r"
+--- !u!1 &538028274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 843967986902913530, guid: 17e1aea3cd84a704194e8aa1a7c994f5, type: 3}
+  m_PrefabInstance: {fileID: 113326178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &643476412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1642,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1058358549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1839694715666097623, guid: 17e1aea3cd84a704194e8aa1a7c994f5, type: 3}
+  m_PrefabInstance: {fileID: 113326178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1058358553 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8894654183952561214, guid: 17e1aea3cd84a704194e8aa1a7c994f5, type: 3}
+  m_PrefabInstance: {fileID: 113326178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1058358554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058358549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0258ea785057cf4ba5358442632d3a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wardSpriteRenderer: {fileID: 1058358553}
+  pickupSprite: {fileID: 4483270901623326340, guid: 08bc0aac1c88d6349a35fb500220f823, type: 3}
+  completedWardSprite: {fileID: 9011213135108779423, guid: 75f7d3baaf765a8408bf245dccb5fe2e, type: 3}
+  popupUI: {fileID: 538028274}
+  fadeImage: {fileID: 15193219}
+  nextSceneIndex: 5
+  pickupDuration: 2
+  completedDuration: 2
+  fadeDuration: 1
+  wardManager: {fileID: 0}
+  levelIndex: 3
 --- !u!1 &1206964315
 GameObject:
   m_ObjectHideFlags: 0
