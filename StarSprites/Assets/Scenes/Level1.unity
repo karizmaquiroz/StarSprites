@@ -532,7 +532,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -7794904150637191808, guid: 92586a21a14b7c14daa12dac4c1b14f1, type: 3}
+  m_Sprite: {fileID: -7794904150637191808, guid: 6c760ee7d1856884786b375d7655cb5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2391,7 +2391,7 @@ Transform:
   m_GameObject: {fileID: 824556509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.489256, y: 18.230001, z: -10}
+  m_LocalPosition: {x: -8.84177, y: 18.230001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5544,7 +5544,7 @@ Transform:
   m_GameObject: {fileID: 1980307863}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.489256, y: 18.230001, z: -10}
+  m_LocalPosition: {x: -8.84177, y: 18.230001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6339,7 +6339,8 @@ PrefabInstance:
       value: 'PauseMenu '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8500820591568944434, guid: 4bcc08ee05a3eef4096d4f6b753bcedc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bcc08ee05a3eef4096d4f6b753bcedc, type: 3}
