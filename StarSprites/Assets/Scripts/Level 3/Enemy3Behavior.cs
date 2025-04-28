@@ -36,6 +36,7 @@ public class Enemy3Behavior : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
             originalColor = spriteRenderer.color;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
