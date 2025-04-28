@@ -3710,7 +3710,7 @@ MonoBehaviour:
   patrolSpeed: 10
   chaseSpeed: 15
   detectionRange: 50
-  attackRange: 10
+  attackRange: 20
   attackCooldown: 2
   pointA: {fileID: 650524766}
   pointB: {fileID: 1576165924}
