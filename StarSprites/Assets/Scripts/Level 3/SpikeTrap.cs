@@ -14,7 +14,6 @@ public class SpikeTrap : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private Vector3 originalPosition;
-    private bool isTriggered = false;
 
     private void Start()
     {
@@ -24,13 +23,9 @@ public class SpikeTrap : MonoBehaviour
         originalPosition = transform.position;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (!isTriggered && collision.CompareTag("Player"))
-        {
-            isTriggered = true;
-            StartCoroutine(SpikeWarningAndAttack(collision));
-        }
+        StartCoroutine(SpikeWarningAndAttack(null));
     }
 
     private IEnumerator SpikeWarningAndAttack(Collider2D player)
@@ -68,6 +63,5 @@ public class SpikeTrap : MonoBehaviour
 
         // Move spikes back down
         transform.position = originalPosition;
-        isTriggered = false;
     }
 }
