@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ToHouse : MonoBehaviour
 {
@@ -10,21 +11,44 @@ public class ToHouse : MonoBehaviour
 
     public void GoToHouse()
     {
-        var progress = SaveManager.Instance.currentData.levelProgress.Find(x => x.levelIndex == levelIndex);
-        if (progress != null)
+        if (SceneManager.GetActiveScene().buildIndex == 6)
         {
+            ReturnToLastLevel();
+            return; // Very important! Otherwise, code continues!
+        }
+
+        // Check if progress already exists
+        var progress = SaveManager.Instance.currentData.levelProgress.Find(x => x.levelIndex == levelIndex);
+        if (progress == null)
+        {
+            // If it doesn't exist, create and add it properly
             progress = new GameSaveData.LevelProgress
             {
-                levelIndex = levelIndex,
+                levelIndex = levelIndex
             };
+            SaveManager.Instance.currentData.levelProgress.Add(progress); // <- ADD to the list!
         }
-        SaveManager.Instance.SaveGame(); // Save the game before transitioning
-        UnityEngine.SceneManagement.SceneManager.LoadScene(6); // Load the house scene
+        else
+        {
+            // If it exists, you could update it here if needed
+            progress.levelIndex = levelIndex;
+        }
+
+        SaveManager.Instance.SaveGame(); // Save the game after making sure progress is correct
+        SceneManager.LoadScene(6); // Load the house scene
     }
+
 
     public void ReturnToLastLevel()
     {
         var progress = SaveManager.Instance.currentData.levelProgress.Find(x => x.levelIndex == levelIndex);
+        Debug.Log(progress);
+        // Try to find the fade overlay if it still exists
+        var fadeOverlay = GameObject.Find("dust"); // replace with your fade object's real name
+        if (fadeOverlay != null)
+        {
+            fadeOverlay.SetActive(true);
+        }
         if (progress != null)
         {
             int lastLevel = progress.levelIndex;
