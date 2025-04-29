@@ -2497,7 +2497,11 @@ Transform:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -8.84177, y: 18.230001, z: -10}
+=======
+  m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
+>>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
 >>>>>>> Stashed changes
@@ -5759,7 +5763,11 @@ Transform:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -8.84177, y: 18.230001, z: -10}
+=======
+  m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
+>>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
 >>>>>>> Stashed changes
@@ -6973,6 +6981,9 @@ PrefabInstance:
       objectReference: {fileID: -876546973899608171, guid: b68b3fc5fba6ab244a6dbed91eef6c22, type: 3}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
