@@ -9,7 +9,7 @@ public class PickUpItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Get the InventoryManager component from the player
-            InventoryManager inventory = other.GetComponent<InventoryManager>();
+            InventoryManager inventory = GameObject.Find("Inventory").GetComponent<InventoryManager>();
             Debug.Log(inventory);
             if (inventory != null)
             {
