@@ -68,7 +68,7 @@ public class Boss3Behavior : MonoBehaviour
 
     IEnumerator BirdAttack()
     {
-        // TODO: animator.SetTrigger("RaiseHands"); // Boss raises hands
+        animator.SetTrigger("RaiseHands"); // Boss raises hands
         yield return new WaitForSeconds(0.5f); // short windup
 
         // SCREEN SHAKE!
@@ -94,7 +94,7 @@ public class Boss3Behavior : MonoBehaviour
 
     IEnumerator BearAttack()
     {
-        // TODO: animator.SetTrigger("SummonBears");
+        animator.SetTrigger("RaiseHands");
         yield return new WaitForSeconds(0.5f);
 
         for (int i = 0; i < bearSpawnPoints.Length && i < 3; i++)
@@ -107,7 +107,7 @@ public class Boss3Behavior : MonoBehaviour
 
     IEnumerator FoxAttack()
     {
-        // TODO: animator.SetTrigger("SummonFoxes");
+        TODO: animator.SetTrigger("RaiseHands");
         yield return new WaitForSeconds(0.5f);
 
         for (int i = 0; i < foxSpawnPoints.Length && i < 3; i++)
