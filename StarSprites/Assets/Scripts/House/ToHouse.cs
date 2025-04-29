@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class ToHouse : MonoBehaviour
 {
@@ -43,63 +42,33 @@ public class ToHouse : MonoBehaviour
     public void ReturnToLastLevel()
     {
         var progress = SaveManager.Instance.currentData.levelProgress.Find(x => x.levelIndex == levelIndex);
-
+        Debug.Log(progress);
         if (progress != null)
         {
-            int lastLevelSceneIndex = 0;
-
-            switch (progress.levelIndex)
+            int lastLevel = progress.levelIndex;
+            if (lastLevel == 1)
             {
-                case 1:
-                    lastLevelSceneIndex = 2;
-                    break;
-                case 2:
-                    lastLevelSceneIndex = 3;
-                    break;
-                case 3:
-                    lastLevelSceneIndex = 4;
-                    break;
-                default:
-                    Debug.LogWarning("Invalid level index: " + progress.levelIndex);
-                    return;
+                UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+                SaveManager.Instance.LoadGame();
             }
-
-            StartCoroutine(LoadSceneAndReactivatePlayer(lastLevelSceneIndex));
+            else if (lastLevel == 2)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+                SaveManager.Instance.LoadGame();
+            }
+            else if (lastLevel == 3)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(4);
+                SaveManager.Instance.LoadGame();
+            }
+            else
+            {
+                Debug.LogWarning("Invalid level index: " + lastLevel);
+            }
         }
         else
         {
-            Debug.LogWarning("No matching progress found.");
+            // Handle the case where no matching progress is found
         }
     }
-
-    private IEnumerator LoadSceneAndReactivatePlayer(int sceneIndex)
-    {
-        var asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
-
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        ReactivatePlayer();
-    }
-
-    private void ReactivatePlayer()
-    {
-        // Find inactive Player manually
-        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
-
-        foreach (GameObject obj in allObjects)
-        {
-            if (obj.CompareTag("Player") && !obj.activeInHierarchy)
-            {
-                obj.SetActive(true);
-                Debug.Log("Player reactivated after scene load!");
-                return;
-            }
-        }
-
-        Debug.LogWarning("No inactive Player found after scene load!");
-    }
-
 }

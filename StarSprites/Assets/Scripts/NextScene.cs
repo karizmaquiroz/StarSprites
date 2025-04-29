@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NextScene : MonoBehaviour
 {
+    
     [Header("Enemies in Scene")]
     public List<GameObject> enemyList = new List<GameObject>();
 
@@ -21,9 +22,10 @@ public class NextScene : MonoBehaviour
     [Tooltip("Set the current level index (1, 2, or 3)")]
     public int currentLevelIndex = 1;
 
-    private bool bossCleared = false;
-    private bool bossActivated = false;
-    private bool bossDefeated = false;
+    public bool bossCleared = false;
+    public bool bossActivated = false;
+    public bool bossDefeated = false;
+    public bool allEnemiesInactive = false;
 
     void Start()
     {
@@ -41,7 +43,7 @@ public class NextScene : MonoBehaviour
         if (!bossCleared)
         {
             // Check if all regular enemies are inactive or dead
-            bool allEnemiesInactive = true;
+            allEnemiesInactive = true;
             foreach (GameObject enemy in enemyList)
             {
                 if (enemy != null && enemy.activeInHierarchy)
