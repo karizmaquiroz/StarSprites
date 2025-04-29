@@ -27,14 +27,21 @@ public class BossOneScript : MonoBehaviour
 
     private bool isEnraged = false;
     private bool isPerformingSpecialAttack = false;
+    private bool isAttacking = false;
+
 
     private Rigidbody2D rb;
 
     public HealthBarManager healthBarManager; // Reference to the HealthBarManager script
 
+    //animator
+    Animator animator;
+    SpriteRenderer spriteRenderer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         targetPoint = pointA.position;
         currentHealth = maxHealth;
@@ -109,11 +116,14 @@ public class BossOneScript : MonoBehaviour
 
     void ChasePlayer()
     {
+        if (isAttacking || isPerformingSpecialAttack)
+            return; // Don't move while attacking or special attacking
+
         float step = chaseSpeed * Time.deltaTime;
         Vector3 newPosition = Vector2.MoveTowards(transform.position, player.position, step);
 
-        // Flip the bear to face the direction it is moving
-        if ((newPosition.x < transform.position.x && facingRight) || (newPosition.x > transform.position.x && !facingRight))
+        if ((newPosition.x < transform.position.x && facingRight) ||
+            (newPosition.x > transform.position.x && !facingRight))
         {
             Flip();
         }
@@ -126,9 +136,10 @@ public class BossOneScript : MonoBehaviour
         }
     }
 
+
     void Attack()
     {
-        if (attackCooldownTimer <= 0 && !isPerformingSpecialAttack)
+        if (attackCooldownTimer <= 0 && !isPerformingSpecialAttack && !isAttacking)
         {
             if (isEnraged)
             {
@@ -141,12 +152,15 @@ public class BossOneScript : MonoBehaviour
             else
             {
                 Debug.Log("Enemy attacks with a bite!");
+                animator.SetTrigger("playerContact");
                 healthBarManager.TakeDamage(10);
+                StartCoroutine(EndAttackAfterDelay(1f)); // <- wait a short time before chasing again
             }
 
             attackCooldownTimer = attackCooldown;
         }
     }
+
 
     IEnumerator DoChargeAttack()
     {
@@ -158,7 +172,7 @@ public class BossOneScript : MonoBehaviour
         while (timer > 0f)
         {
             transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position + chargeDirection, chargeSpeed * Time.deltaTime);
-            healthBarManager.TakeDamage(20); // Damage the player during charge
+            healthBarManager.TakeDamage(10); // Damage the player during charge
             timer -= Time.deltaTime;
             yield return null;
         }
@@ -176,12 +190,20 @@ public class BossOneScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, -slamForce);
-        healthBarManager.TakeDamage(25); // Damage the player during slam
+        healthBarManager.TakeDamage(10); // Damage the player during slam
         yield return new WaitForSeconds(0.5f);
 
         rb.linearVelocity = Vector2.zero;
         isPerformingSpecialAttack = false;
     }
+
+    IEnumerator EndAttackAfterDelay(float delay)
+    {
+        isAttacking = true;
+        yield return new WaitForSeconds(delay);
+        isAttacking = false;
+    }
+
 
     public void TakeDamage(int damage)
     {

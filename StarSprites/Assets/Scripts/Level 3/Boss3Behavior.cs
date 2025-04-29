@@ -7,24 +7,24 @@ public class Boss3Behavior : MonoBehaviour
     public GameObject birdPrefab;
     public GameObject bearPrefab;
     public GameObject foxPrefab;
+    public GameObject lorePagePrefab;
 
     [Header("Bird Attack")]
-    public int birdsToSpawn = 5;
-    public float birdSpawnY = -4.5f; // Y position for birds at bottom
-    public float birdSpawnXMin = -8f;
-    public float birdSpawnXMax = 8f;
+    public int birdsToSpawn = 1;
+    public Transform[] birdSpawnPoints; // <-- NEW: Assign multiple points manually
 
     [Header("Bear & Fox Spawns")]
-    public Transform[] bearSpawnPoints; // Set 3 in inspector
-    public Transform[] foxSpawnPoints;  // Set 3 in inspector
+    public Transform[] bearSpawnPoints;
+    public Transform[] foxSpawnPoints;
 
     [Header("Timings")]
     public float idleDuration = 2f;
-    public float attackCooldown = 5f;
+    public float attackCooldown = 2f;
 
     private Animator animator;
     private bool isAttacking = false;
     private Transform player;
+    public int hitPoints = 500;
 
     void Start()
     {
@@ -38,7 +38,7 @@ public class Boss3Behavior : MonoBehaviour
         while (true)
         {
             // IDLE PHASE
-            // TODO: animator.SetTrigger("Idle"); // Your idle trigger
+            // TODO: animator.SetTrigger("Idle");
             yield return new WaitForSeconds(idleDuration);
 
             // ATTACK PHASE
@@ -68,25 +68,28 @@ public class Boss3Behavior : MonoBehaviour
 
     IEnumerator BirdAttack()
     {
-        // TODO: animator.SetTrigger("RaiseHands"); // Boss raises hands
-        yield return new WaitForSeconds(0.5f); // short windup
+        Debug.Log("Bird Attack!");
+        animator.SetTrigger("RaiseHands");
+        yield return new WaitForSeconds(0.5f);
 
         // SCREEN SHAKE!
         if (CameraShake.Instance != null)
             CameraShake.Instance.Shake(0.5f, 0.4f);
 
+        // Spawn birds
         for (int i = 0; i < birdsToSpawn; i++)
         {
-            float t = (float)i / (birdsToSpawn - 1);
-            float x = Mathf.Lerp(birdSpawnXMin, birdSpawnXMax, t);
-            Vector3 spawnPos = new Vector3(x, birdSpawnY, 0);
+            if (birdSpawnPoints.Length > 0)
+            {
+                // Pick a random spawn point from array
+                Transform spawnPoint = birdSpawnPoints[Random.Range(0, birdSpawnPoints.Length)];
+                GameObject bird = Instantiate(birdPrefab, spawnPoint.position, Quaternion.identity);
 
-            GameObject bird = Instantiate(birdPrefab, spawnPos, Quaternion.identity);
-
-            // Target the player
-            Enemy2Behavior birdScript = bird.GetComponent<Enemy2Behavior>();
-            if (birdScript != null && player != null)
-                birdScript.player = player;
+                // Target the player
+                Enemy2Behavior birdScript = bird.GetComponent<Enemy2Behavior>();
+                if (birdScript != null && player != null)
+                    birdScript.player = player;
+            }
         }
 
         yield return new WaitForSeconds(1f);
@@ -94,12 +97,12 @@ public class Boss3Behavior : MonoBehaviour
 
     IEnumerator BearAttack()
     {
-        // TODO: animator.SetTrigger("SummonBears");
+        Debug.Log("Bear Attack!");
+        animator.SetTrigger("RaiseHands");
         yield return new WaitForSeconds(0.5f);
-
-        for (int i = 0; i < bearSpawnPoints.Length && i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
-            Instantiate(bearPrefab, bearSpawnPoints[i].position, Quaternion.identity);
+            Instantiate(bearPrefab, bearSpawnPoints[i].position, bearSpawnPoints[i].rotation);
         }
 
         yield return new WaitForSeconds(1f);
@@ -107,14 +110,42 @@ public class Boss3Behavior : MonoBehaviour
 
     IEnumerator FoxAttack()
     {
-        // TODO: animator.SetTrigger("SummonFoxes");
+        Debug.Log("Fox Attack!");
+        animator.SetTrigger("RaiseHands");
         yield return new WaitForSeconds(0.5f);
 
-        for (int i = 0; i < foxSpawnPoints.Length && i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             Instantiate(foxPrefab, foxSpawnPoints[i].position, Quaternion.identity);
         }
 
         yield return new WaitForSeconds(1f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bullet"))
+        {
+            Debug.Log("Hit by bullet!");
+            hitPoints--;
+            Debug.Log("Hit points: " + hitPoints);
+            if (hitPoints <= 0)
+            {
+                Die();
+            }
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Enemy defeated!");
+
+        // Spawn lore page at boss's death position
+        if (lorePagePrefab != null)
+        {
+            Instantiate(lorePagePrefab, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject); // Destroy the boss
     }
 }

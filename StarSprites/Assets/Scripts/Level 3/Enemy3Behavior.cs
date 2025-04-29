@@ -16,7 +16,7 @@ public class Enemy3Behavior : MonoBehaviour
     public CharacterMovement playerController;
     public float flashDuration = 0.1f;
 
-    private SpriteRenderer spriteRenderer;
+    SpriteRenderer spriteRenderer;
     private Color originalColor;
 
     private Vector2 patrolStart;
@@ -29,8 +29,12 @@ public class Enemy3Behavior : MonoBehaviour
     private enum State { Patrolling, Chasing, Attacking, Retreating, Cooldown }
     private State currentState = State.Patrolling;
 
+    //animator
+    Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         rb = GetComponent<Rigidbody2D>();
         patrolStart = transform.position;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -70,8 +74,12 @@ public class Enemy3Behavior : MonoBehaviour
             case State.Cooldown:
                 cooldownTimer -= Time.deltaTime;
                 if (cooldownTimer <= 0)
+                {
+                    patrolStart = transform.position;
                     currentState = State.Patrolling;
+                }
                 break;
+
         }
     }
 
@@ -81,12 +89,21 @@ public class Enemy3Behavior : MonoBehaviour
         float move = movingRight ? patrolSpeed : -patrolSpeed;
         rb.linearVelocity = new Vector2(move, rb.linearVelocity.y);
 
-        if (Vector2.Distance(transform.position, patrolStart) > patrolRange)
+        if (movingRight && transform.position.x >= patrolStart.x + patrolRange)
         {
-            movingRight = !movingRight;
+            movingRight = false;
             Flip();
+            rb.linearVelocity = new Vector2(-patrolSpeed, rb.linearVelocity.y); // Important!
+        }
+        else if (!movingRight && transform.position.x <= patrolStart.x - patrolRange)
+        {
+            movingRight = true;
+            Flip();
+            rb.linearVelocity = new Vector2(patrolSpeed, rb.linearVelocity.y); // Important!
         }
     }
+
+
 
     void ChasePlayer()
     {
@@ -116,6 +133,8 @@ public class Enemy3Behavior : MonoBehaviour
         {
             Debug.Log("Enemy attack #" + (i + 1));
             // play animation or trigger effect here
+            animator.SetTrigger("playerContact");
+
             yield return new WaitForSeconds(0.5f); // time between attacks
         }
 
@@ -142,11 +161,11 @@ public class Enemy3Behavior : MonoBehaviour
 
     void Flip()
     {
-        movingRight = !movingRight;
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))

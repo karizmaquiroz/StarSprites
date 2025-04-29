@@ -129,10 +129,10 @@ TextureImporter:
       name: IMG_2113-2 (3)_0
       rect:
         serializedVersion: 2
-        x: 3172
-        y: 78
-        width: 531
-        height: 1085
+        x: 3170
+        y: 74
+        width: 536
+        height: 1088
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1e6c46684ee4b254b8ef0e22b13f3352
     internalID: 0
     vertices: []
     indices: 

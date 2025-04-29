@@ -17,6 +17,8 @@ public class EnemyBehavior : MonoBehaviour
     private bool movingToA = true;
     private float attackCooldownTimer = 0f;
     private bool facingRight;
+    private bool isAttacking = false;
+
 
     private Rigidbody2D rb;
 
@@ -112,10 +114,10 @@ public class EnemyBehavior : MonoBehaviour
     // Bear chases player
     void ChasePlayer()
     {
-        // The bear follows the player around at increased speed until the player is out of range
+        if (isAttacking) return; // Do NOT move while attacking
+
         float step = chaseSpeed * Time.deltaTime;
         Vector3 newPosition = Vector2.MoveTowards(transform.position, player.position, step);
-
 
         if ((player.position.x < transform.position.x && facingRight) ||
             (player.position.x > transform.position.x && !facingRight))
@@ -132,17 +134,28 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+
     // Attack animation plays and bear damages player every few seconds
     void Attack()
     {
         if (attackCooldownTimer <= 0)
         {
             Debug.Log("Enemy Attacks!");
+            isAttacking = true;
             animator.SetTrigger("playerContact");
             HealthBarManager.Instance.TakeDamage(5);
             attackCooldownTimer = attackCooldown;
+
+            // Allow movement again after cooldown
+            Invoke(nameof(EndAttack), attackCooldown);
         }
     }
+
+    void EndAttack()
+    {
+        isAttacking = false;
+    }
+
 
     // Allows the bear to take damage
     public void TakeDamage()

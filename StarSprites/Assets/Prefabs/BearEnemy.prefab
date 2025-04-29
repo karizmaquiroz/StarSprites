@@ -105,8 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrolSpeed: 2
   chaseSpeed: 4
-  detectionRange: 5
-  attackRange: 1
+  detectionRange: 10
+  attackRange: 15
   attackCooldown: 2
   pointA: {fileID: 0}
   pointB: {fileID: 0}
