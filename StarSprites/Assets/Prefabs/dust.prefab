@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: 7655302482391586646}
   - component: {fileID: 3894026423372126870}
   - component: {fileID: 1264417581274460316}
-  - component: {fileID: 3961772293105834646}
   m_Layer: 7
   m_Name: dust
   m_TagString: Player
@@ -264,20 +263,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 13.58, y: 15.17}
   m_EdgeRadius: 0
---- !u!114 &3961772293105834646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6820298775416396574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e5d3183af6b454fb419585b1837b4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryItems: []
-  inventoryUI: {fileID: 0}
 --- !u!1 &8329879372386256013
 GameObject:
   m_ObjectHideFlags: 0

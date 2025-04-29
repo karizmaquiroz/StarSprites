@@ -23,13 +23,5 @@ public class HouseSceneCameraFix : MonoBehaviour
         }
 
         Time.timeScale = 1f; // Always unpause just in case
-
-        // Try to find the fade overlay if it still exists
-        var fadeOverlay = GameObject.Find("dust"); // replace with your fade object's real name
-        if (fadeOverlay != null)
-        {
-            fadeOverlay.SetActive(false); // completely delete it
-            Debug.Log("Fade overlay found and destroyed.");
-        }
     }
 }

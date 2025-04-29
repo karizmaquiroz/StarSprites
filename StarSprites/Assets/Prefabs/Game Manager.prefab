@@ -203,9 +203,6 @@ GameObject:
   - component: {fileID: 5501719753482100059}
   - component: {fileID: 8254766935733194907}
   - component: {fileID: 4649375474457054482}
-  - component: {fileID: 5400271800453009370}
-  - component: {fileID: 2423536875147143355}
-  - component: {fileID: 1775233812041688804}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -253,6 +250,10 @@ MonoBehaviour:
   bossTriggerZone: {fileID: 0}
   ward: {fileID: 0}
   currentLevelIndex: 1
+  bossCleared: 0
+  bossActivated: 0
+  bossDefeated: 0
+  allEnemiesInactive: 0
 --- !u!114 &4649375474457054482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,54 +266,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a6b889320bbfe43be0ce54e3c48d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5400271800453009370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8668385339370764344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 083ef7d4ad6b86b4b87e9219c823b966, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level1Complete: 0
-  level2Complete: 0
-  level3Complete: 0
-  wardPieces: 000000
---- !u!114 &2423536875147143355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8668385339370764344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9ffcec4a580a3848a7e87e34343b17b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1775233812041688804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8668385339370764344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c701c3c3b12f2be40b5d46a227047fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveFileName: gamesave.json
-  currentData:
-    levelsCompleted: 
-    levelProgress: []
-    furnitureCollected: 0
-    furniturePlacements: []
-    lorePagesCollected: 
-    playerHealth: 100
-    playerHearts: 3
-    playerLevel: 1
-    playerXP: 0
