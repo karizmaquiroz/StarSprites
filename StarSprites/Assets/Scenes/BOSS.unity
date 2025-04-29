@@ -2168,7 +2168,7 @@ MonoBehaviour:
   - {fileID: 137229966}
   idleDuration: 2
   attackCooldown: 2
-  hitPoints: 300
+  hitPoints: 150
 --- !u!60 &1540952905
 PolygonCollider2D:
   m_ObjectHideFlags: 0
