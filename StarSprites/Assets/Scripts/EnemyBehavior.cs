@@ -181,11 +181,11 @@ public class EnemyBehavior : MonoBehaviour
         Vector3 scale = transform.localScale;
         if (facingRight)
         {
-            scale.x = -3;
+            scale.x *= -1;
         }
         else
         {
-            scale.x = 3;
+            scale.x *= -1;
         }
 
         transform.localScale = scale;
