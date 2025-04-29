@@ -4030,7 +4030,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7978686817197719258, guid: e0578abcf9cf4ec46a41292ecc7b8f17, type: 3}
+      - m_Target: {fileID: 7852669735407049160, guid: bc4d0a3271169144eaa8fff962a93e85, type: 3}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: mainMenu
         m_Mode: 1

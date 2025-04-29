@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BOSS.unity
     guid: b6e8926070e93424db940eefe4484694
-  - enabled: 1
+  - enabled: 0
     path: Assets/Cutscene1.unity
     guid: d7138f826d97ece479d6defda7dd6361
   - enabled: 1
@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscene4.unity
     guid: 52747c80bd98741428f66f7b9322d985
+  - enabled: 1
+    path: Assets/Scenes/Cutscene1.unity
+    guid: 67c252944f0efd744838871ca9a2e503
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
