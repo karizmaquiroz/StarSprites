@@ -1914,7 +1914,7 @@ MonoBehaviour:
   completedWardSprite: {fileID: 9011213135108779423, guid: 75f7d3baaf765a8408bf245dccb5fe2e, type: 3}
   popupUI: {fileID: 538028274}
   fadeImage: {fileID: 15193219}
-  nextSceneIndex: 5
+  nextSceneIndex: 7
   pickupDuration: 2
   completedDuration: 2
   fadeDuration: 1
