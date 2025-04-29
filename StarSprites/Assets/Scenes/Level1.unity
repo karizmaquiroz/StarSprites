@@ -2601,6 +2601,7 @@ Transform:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -8.84177, y: 18.230001, z: -10}
 =======
   m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
@@ -2622,6 +2623,9 @@ Transform:
 >>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: -16.876156, y: 18.230001, z: -10}
+>>>>>>> Stashed changes
+=======
+  m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
 >>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2733,6 +2737,9 @@ AudioSource:
   m_PlayOnAwake: 1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
   m_Volume: 0.137
   m_Pitch: -0.71
   Loop: 1
@@ -2740,6 +2747,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 124
+<<<<<<< Updated upstream
 =======
 =======
 >>>>>>> Stashed changes
@@ -2751,6 +2759,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
 <<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -6097,6 +6107,7 @@ Transform:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -8.84177, y: 18.230001, z: -10}
 =======
   m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
@@ -6118,6 +6129,9 @@ Transform:
 >>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: -16.876156, y: 18.230001, z: -10}
+>>>>>>> Stashed changes
+=======
+  m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
 >>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7425,6 +7439,9 @@ PrefabInstance:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -7923,12 +7940,16 @@ PrefabInstance:
       insertIndex: -1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       addedObject: {fileID: 15851735}
 =======
       addedObject: {fileID: 1624880646}
 >>>>>>> Stashed changes
 =======
       addedObject: {fileID: 1624880646}
+>>>>>>> Stashed changes
+=======
+      addedObject: {fileID: 15851735}
 >>>>>>> Stashed changes
   m_SourcePrefab: {fileID: 100100000, guid: 295a094261d952a478ffa21af803fcd7, type: 3}
 --- !u!1660057539 &9223372036854775807

@@ -346,7 +346,11 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 60
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     OrthographicSize: 13.55
+=======
+    OrthographicSize: 16.8
+>>>>>>> Stashed changes
 =======
     OrthographicSize: 16.8
 >>>>>>> Stashed changes
@@ -376,7 +380,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 0, y: -1.2, z: -10}
+=======
+  m_LocalPosition: {x: -1, y: -1.2, z: -10}
+>>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: -1, y: -1.2, z: -10}
 >>>>>>> Stashed changes
@@ -973,7 +981,11 @@ Camera:
   field of view: 60
   orthographic: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   orthographic size: 13.55
+=======
+  orthographic size: 16.8
+>>>>>>> Stashed changes
 =======
   orthographic size: 16.8
 >>>>>>> Stashed changes
@@ -1002,7 +1014,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 0, y: -1.2, z: -10}
+=======
+  m_LocalPosition: {x: -1, y: -1.2, z: -10}
+>>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: -1, y: -1.2, z: -10}
 >>>>>>> Stashed changes
