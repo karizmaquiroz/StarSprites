@@ -370,9 +370,6 @@ AudioSource:
   m_PlayOnAwake: 1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
   m_Volume: 0.648
   m_Pitch: 1
   Loop: 0
@@ -380,7 +377,6 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-<<<<<<< Updated upstream
 =======
 =======
 >>>>>>> Stashed changes
@@ -392,8 +388,6 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 110
 <<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1584,16 +1578,12 @@ AudioSource:
   m_PlayOnAwake: 1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_Volume: 0.232
 =======
   m_Volume: 0.369
 >>>>>>> Stashed changes
 =======
   m_Volume: 0.369
->>>>>>> Stashed changes
-=======
-  m_Volume: 0.232
 >>>>>>> Stashed changes
   m_Pitch: 1
   Loop: 1
@@ -3060,7 +3050,6 @@ AudioSource:
   m_PlayOnAwake: 1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_Volume: 0.904
   m_Pitch: 0.6
 =======
@@ -3070,10 +3059,6 @@ AudioSource:
 =======
   m_Volume: 0.067
   m_Pitch: 1
->>>>>>> Stashed changes
-=======
-  m_Volume: 0.904
-  m_Pitch: 0.6
 >>>>>>> Stashed changes
   Loop: 1
   Mute: 0
@@ -3225,16 +3210,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_LocalPosition: {x: 6.4095592, y: -1.23877, z: -10}
 =======
   m_LocalPosition: {x: 3.1632245, y: -1.7128003, z: -10}
 >>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: 3.1632245, y: -1.7128003, z: -10}
->>>>>>> Stashed changes
-=======
-  m_LocalPosition: {x: 6.4095592, y: -1.23877, z: -10}
 >>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4627,9 +4608,6 @@ AudioSource:
   m_PlayOnAwake: 1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
   m_Volume: 0.422
   m_Pitch: 1
   Loop: 0
@@ -4637,7 +4615,6 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-<<<<<<< Updated upstream
 =======
 =======
 >>>>>>> Stashed changes
@@ -4649,8 +4626,6 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 96
 <<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
