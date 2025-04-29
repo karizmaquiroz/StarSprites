@@ -24,6 +24,7 @@ public class CharacterMovement : MonoBehaviour
 
     private bool isStunned = false;
     private int selectedAbility = 1;
+    private float shotpointX;
 
     Animator animator;
     SpriteRenderer spriteRenderer;
@@ -33,6 +34,7 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        shotpointX = shotpoint.transform.localPosition.x;
     }
 
     void Update()
@@ -51,13 +53,13 @@ public class CharacterMovement : MonoBehaviour
         if (moveInput > 0)
         {
             spriteRenderer.flipX = true;
-            shotpoint.transform.localPosition = new Vector3(9.4f, 0f, 0f);
+            shotpoint.transform.localPosition = new Vector3(shotpointX, 0f, 0f);
             isFacingRight = true;
         }
         else if (moveInput < 0)
         {
             spriteRenderer.flipX = false;
-            shotpoint.transform.localPosition = new Vector3(-9.4f, 0f, 0f);
+            shotpoint.transform.localPosition = new Vector3(-shotpointX, 0f, 0f);
             isFacingRight = false;
         }
 

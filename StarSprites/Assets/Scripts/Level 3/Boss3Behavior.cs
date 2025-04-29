@@ -7,6 +7,7 @@ public class Boss3Behavior : MonoBehaviour
     public GameObject birdPrefab;
     public GameObject bearPrefab;
     public GameObject foxPrefab;
+    public GameObject lorePagePrefab;
 
     [Header("Bird Attack")]
     public int birdsToSpawn = 1;
@@ -18,12 +19,12 @@ public class Boss3Behavior : MonoBehaviour
 
     [Header("Timings")]
     public float idleDuration = 2f;
-    public float attackCooldown = 5f;
+    public float attackCooldown = 2f;
 
     private Animator animator;
     private bool isAttacking = false;
     private Transform player;
-    public int hitPoints = 1000;
+    public int hitPoints = 500;
 
     void Start()
     {
@@ -99,7 +100,10 @@ public class Boss3Behavior : MonoBehaviour
         Debug.Log("Bear Attack!");
         animator.SetTrigger("RaiseHands");
         yield return new WaitForSeconds(0.5f);
-        Instantiate(bearPrefab, bearSpawnPoints[0].position, bearSpawnPoints[0].rotation);
+        for (int i = 0; i < 3; i++)
+        {
+            Instantiate(bearPrefab, bearSpawnPoints[i].position, bearSpawnPoints[i].rotation);
+        }
 
         yield return new WaitForSeconds(1f);
     }
@@ -110,7 +114,7 @@ public class Boss3Behavior : MonoBehaviour
         animator.SetTrigger("RaiseHands");
         yield return new WaitForSeconds(0.5f);
 
-        for (int i = 0; i < foxSpawnPoints.Length && i < 1; i++)
+        for (int i = 0; i < 3; i++)
         {
             Instantiate(foxPrefab, foxSpawnPoints[i].position, Quaternion.identity);
         }
@@ -124,7 +128,7 @@ public class Boss3Behavior : MonoBehaviour
         {
             Debug.Log("Hit by bullet!");
             hitPoints--;
-
+            Debug.Log("Hit points: " + hitPoints);
             if (hitPoints <= 0)
             {
                 Die();
@@ -135,6 +139,13 @@ public class Boss3Behavior : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy defeated!");
-        Destroy(gameObject);
+
+        // Spawn lore page at boss's death position
+        if (lorePagePrefab != null)
+        {
+            Instantiate(lorePagePrefab, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject); // Destroy the boss
     }
 }
