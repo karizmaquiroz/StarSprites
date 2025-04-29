@@ -36,6 +36,12 @@ public class GameManager : MonoBehaviour
         //Debug.Log("In the MainMenu scene");
     }
 
+    public void Instructions()
+    {
+        SceneManager.LoadScene("Instructions");
+        //Debug.Log("In the MainMenu scene");
+    }
+
     public void quit() //inside gameOver when pressed application quits
     {
         SceneManager.LoadScene("Credits");
