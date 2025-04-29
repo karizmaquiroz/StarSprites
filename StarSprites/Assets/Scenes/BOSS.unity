@@ -2151,7 +2151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ee313b334e5834c9ceba9241558bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdPrefab: {fileID: 8441326909452253388, guid: 2ae05622fdc43ec4493fe091ab02da25, type: 3}
+  birdPrefab: {fileID: 7316956302202403124, guid: be0b05a3fbb17584aa9d9a2b872a3686, type: 3}
   bearPrefab: {fileID: 4420543757499523934, guid: 101538b2ea5bc74409e78594ff951e2d, type: 3}
   foxPrefab: {fileID: 259028458464678835, guid: 78bf0674c151abe4d94a8f166fcd0451, type: 3}
   lorePagePrefab: {fileID: 8153561210209848599, guid: 48c6629f4a78b0949b72037ee6da25b5, type: 3}
