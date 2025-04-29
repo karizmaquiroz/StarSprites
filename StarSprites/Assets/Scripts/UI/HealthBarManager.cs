@@ -45,10 +45,11 @@ public class HealthBarManager : MonoBehaviour
         health -= damage;
         healthBar.value = health;
 
-        if (health <= 0)
+        if (health <= 0 && damage > 0)
         {
             RemoveHeart();
         }
+
         Debug.Log(healthBar.value);
     }
 

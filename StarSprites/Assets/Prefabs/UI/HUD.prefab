@@ -203,8 +203,8 @@ MonoBehaviour:
   - {fileID: 8352111848593513990}
   - {fileID: 7417249880161991832}
   - {fileID: 5149626488351435853}
-  fullHeart: {fileID: 4131529829428405073, guid: 0b2d938aaa2fa4045abd02be2203a26a, type: 3}
-  emptyHeart: {fileID: 4866609793594791844, guid: f98a2b37650499040adce8b527c95669, type: 3}
+  fullHeart: {fileID: 2350297403280568894, guid: c1ebd2869341b464ea0e448829ae42e2, type: 3}
+  emptyHeart: {fileID: 8497178734287486593, guid: 5f5d10b26a095bf4da340f2a25a51968, type: 3}
   healthBar: {fileID: 1473740481821288579}
   health: 100
   heartsRemaining: 0

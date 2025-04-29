@@ -36,7 +36,6 @@ public class NextScene : MonoBehaviour
             ward.SetActive(false);
         if (bossTriggerZone != null)
             bossTriggerZone.enabled = false;
-        SaveManager.Instance.LoadGame(); // Load the game data at the start
     }
 
     void Update()

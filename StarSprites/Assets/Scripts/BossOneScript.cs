@@ -154,7 +154,7 @@ public class BossOneScript : MonoBehaviour
                 Debug.Log("Enemy attacks with a bite!");
                 animator.SetTrigger("playerContact");
                 healthBarManager.TakeDamage(10);
-                StartCoroutine(EndAttackAfterDelay(0.5f)); // <- wait a short time before chasing again
+                StartCoroutine(EndAttackAfterDelay(1f)); // <- wait a short time before chasing again
             }
 
             attackCooldownTimer = attackCooldown;
@@ -172,7 +172,7 @@ public class BossOneScript : MonoBehaviour
         while (timer > 0f)
         {
             transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position + chargeDirection, chargeSpeed * Time.deltaTime);
-            healthBarManager.TakeDamage(20); // Damage the player during charge
+            healthBarManager.TakeDamage(10); // Damage the player during charge
             timer -= Time.deltaTime;
             yield return null;
         }
@@ -190,7 +190,7 @@ public class BossOneScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, -slamForce);
-        healthBarManager.TakeDamage(25); // Damage the player during slam
+        healthBarManager.TakeDamage(10); // Damage the player during slam
         yield return new WaitForSeconds(0.5f);
 
         rb.linearVelocity = Vector2.zero;

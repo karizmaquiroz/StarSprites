@@ -53,13 +53,13 @@ public class CharacterMovement : MonoBehaviour
         if (moveInput > 0)
         {
             spriteRenderer.flipX = true;
-            shotpoint.transform.localPosition = new Vector3(shotpointX, 0f, 0f);
+            shotpoint.transform.localPosition = new Vector3(-shotpointX, 0f, 0f);
             isFacingRight = true;
         }
         else if (moveInput < 0)
         {
             spriteRenderer.flipX = false;
-            shotpoint.transform.localPosition = new Vector3(-shotpointX, 0f, 0f);
+            shotpoint.transform.localPosition = new Vector3(shotpointX, 0f, 0f);
             isFacingRight = false;
         }
 
