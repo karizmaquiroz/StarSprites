@@ -20,9 +20,12 @@ public class SpikeTrap : MonoBehaviour
     private Vector3 originalPosition;
 
     private bool isSpikeActive = false;
+    Animator animator;
+
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
             originalColor = spriteRenderer.color;
@@ -38,17 +41,12 @@ public class SpikeTrap : MonoBehaviour
         while (true)
         {
             // Flash warning
-            for (int i = 0; i < flashCount; i++)
-            {
-                if (spriteRenderer != null)
-                    spriteRenderer.color = warningColor;
-                yield return new WaitForSeconds(flashDuration);
-                if (spriteRenderer != null)
-                    spriteRenderer.color = originalColor;
-                yield return new WaitForSeconds(flashDuration);
-            }
+            animator.SetTrigger("Warning");
+            yield return new WaitForSeconds(2);
 
             // Spike up
+            animator.SetTrigger("Active");
+
             transform.position = originalPosition + spikeUpOffset;
             isSpikeActive = true;
 

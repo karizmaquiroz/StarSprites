@@ -132,12 +132,12 @@ TextureImporter:
       name: IMG_2113-1 (3)_0
       rect:
         serializedVersion: 2
-        x: 1632
+        x: 1630
         y: 0
-        width: 12
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 345
+        height: 2191
+      alignment: 9
+      pivot: {x: 0.47067553, y: 0.25641745}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,33 +150,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: IMG_2113-1 (3)_1
-      rect:
-        serializedVersion: 2
-        x: 1638
-        y: 0
-        width: 335
-        height: 2151
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1c6cafbeb81c23200800000000000000
-      internalID: 158401743615084225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5bc23826b34d4904da6b910da002ef44
     internalID: 0
     vertices: []
     indices: 
@@ -187,7 +165,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       IMG_2113-1 (3)_0: 7485875200598155160
-      IMG_2113-1 (3)_1: 158401743615084225
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
