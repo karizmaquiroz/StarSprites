@@ -2600,6 +2600,7 @@ Transform:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -8.84177, y: 18.230001, z: -10}
 =======
   m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
@@ -2615,6 +2616,9 @@ Transform:
 >>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
+>>>>>>> Stashed changes
+=======
+  m_LocalPosition: {x: -16.876156, y: 18.230001, z: -10}
 >>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: -16.876156, y: 18.230001, z: -10}
@@ -2728,6 +2732,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 0a38a71103e02b148affb1c20930b777, type: 3}
   m_PlayOnAwake: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Volume: 0.137
   m_Pitch: -0.71
   Loop: 1
@@ -2736,6 +2741,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 124
 =======
+=======
+>>>>>>> Stashed changes
   m_Volume: 0.099
   m_Pitch: 1
   Loop: 0
@@ -2743,6 +2750,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   DopplerLevel: 1
   MinDistance: 1
@@ -6086,6 +6096,7 @@ Transform:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -8.84177, y: 18.230001, z: -10}
 =======
   m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
@@ -6101,6 +6112,9 @@ Transform:
 >>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: 49.5348, y: 18.230001, z: -10}
+>>>>>>> Stashed changes
+=======
+  m_LocalPosition: {x: -16.876156, y: 18.230001, z: -10}
 >>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: -16.876156, y: 18.230001, z: -10}
@@ -7908,7 +7922,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3756769212906807468, guid: 295a094261d952a478ffa21af803fcd7, type: 3}
       insertIndex: -1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       addedObject: {fileID: 15851735}
+=======
+      addedObject: {fileID: 1624880646}
+>>>>>>> Stashed changes
 =======
       addedObject: {fileID: 1624880646}
 >>>>>>> Stashed changes

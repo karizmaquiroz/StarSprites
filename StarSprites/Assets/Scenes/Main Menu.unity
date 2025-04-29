@@ -422,8 +422,13 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -168, y: -74}
   m_SizeDelta: {x: 160, y: 30}
+=======
+  m_AnchoredPosition: {x: -52.7, y: -102.76}
+  m_SizeDelta: {x: 318.07, y: 133.12}
+>>>>>>> Stashed changes
 =======
   m_AnchoredPosition: {x: -52.7, y: -102.76}
   m_SizeDelta: {x: 318.07, y: 133.12}
@@ -645,8 +650,13 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -20, y: 10.64}
   m_SizeDelta: {x: 289.37, y: 83.62}
+=======
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 452.23, y: 254.26}
+>>>>>>> Stashed changes
 =======
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 452.23, y: 254.26}
@@ -1382,8 +1392,13 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -15, y: -39}
   m_SizeDelta: {x: 160, y: 30}
+=======
+  m_AnchoredPosition: {x: 0, y: -62}
+  m_SizeDelta: {x: 222.03, y: 90.665}
+>>>>>>> Stashed changes
 =======
   m_AnchoredPosition: {x: 0, y: -62}
   m_SizeDelta: {x: 222.03, y: 90.665}
@@ -1406,10 +1421,13 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 87, y: -72}
   m_SizeDelta: {x: 75.6, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
 =======
+=======
+>>>>>>> Stashed changes
   m_AnchoredPosition: {x: 129.1, y: -132.39}
   m_SizeDelta: {x: 101.86, y: 46.31}
   m_Pivot: {x: 0.7186011, y: 0.09897718}
@@ -1598,8 +1616,13 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -16, y: -74}
   m_SizeDelta: {x: 126.6, y: 30}
+=======
+  m_AnchoredPosition: {x: 46.4, y: -102.76}
+  m_SizeDelta: {x: 213.07, y: 87.52}
+>>>>>>> Stashed changes
 =======
   m_AnchoredPosition: {x: 46.4, y: -102.76}
   m_SizeDelta: {x: 213.07, y: 87.52}

@@ -369,6 +369,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 3f375a0d499b3634ab0a2e791b8dc0a7, type: 3}
   m_PlayOnAwake: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Volume: 0.648
   m_Pitch: 1
   Loop: 0
@@ -377,6 +378,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
 =======
+=======
+>>>>>>> Stashed changes
   m_Volume: 0.288
   m_Pitch: 1
   Loop: 1
@@ -384,6 +387,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 110
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   DopplerLevel: 1
   MinDistance: 1
@@ -1571,7 +1577,11 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 3f375a0d499b3634ab0a2e791b8dc0a7, type: 3}
   m_PlayOnAwake: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Volume: 0.232
+=======
+  m_Volume: 0.369
+>>>>>>> Stashed changes
 =======
   m_Volume: 0.369
 >>>>>>> Stashed changes
@@ -3039,8 +3049,13 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 62afa3184283e334da119c85cd1a57f8, type: 3}
   m_PlayOnAwake: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Volume: 0.904
   m_Pitch: 0.6
+=======
+  m_Volume: 0.067
+  m_Pitch: 1
+>>>>>>> Stashed changes
 =======
   m_Volume: 0.067
   m_Pitch: 1
@@ -3194,7 +3209,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 6.4095592, y: -1.23877, z: -10}
+=======
+  m_LocalPosition: {x: 3.1632245, y: -1.7128003, z: -10}
+>>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: 3.1632245, y: -1.7128003, z: -10}
 >>>>>>> Stashed changes
@@ -4588,6 +4607,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 3f375a0d499b3634ab0a2e791b8dc0a7, type: 3}
   m_PlayOnAwake: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Volume: 0.422
   m_Pitch: 1
   Loop: 0
@@ -4596,6 +4616,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
 =======
+=======
+>>>>>>> Stashed changes
   m_Volume: 0.436
   m_Pitch: 1
   Loop: 1
@@ -4603,6 +4625,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 96
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   DopplerLevel: 1
   MinDistance: 1
