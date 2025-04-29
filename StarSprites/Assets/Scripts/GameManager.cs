@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene("Level1"); 
+        SceneManager.LoadScene(8); 
 
         
     }
