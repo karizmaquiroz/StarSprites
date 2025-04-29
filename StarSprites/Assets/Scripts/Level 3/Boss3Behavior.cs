@@ -7,6 +7,7 @@ public class Boss3Behavior : MonoBehaviour
     public GameObject birdPrefab;
     public GameObject bearPrefab;
     public GameObject foxPrefab;
+    public GameObject lorePagePrefab;
 
     [Header("Bird Attack")]
     public int birdsToSpawn = 1;
@@ -138,6 +139,13 @@ public class Boss3Behavior : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy defeated!");
-        Destroy(gameObject);
+
+        // Spawn lore page at boss's death position
+        if (lorePagePrefab != null)
+        {
+            Instantiate(lorePagePrefab, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject); // Destroy the boss
     }
 }
