@@ -591,9 +591,15 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 17e1aea3cd84a704194e8aa1a7c994f5, type: 3}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &220719018
 GameObject:
   m_ObjectHideFlags: 0
+=======
+--- !u!1 &188189023
+GameObject:
+  m_ObjectHideFlags: 3
+>>>>>>> Stashed changes
 =======
 --- !u!1 &188189023
 GameObject:
@@ -611,6 +617,7 @@ GameObject:
   m_Component:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - component: {fileID: 220719021}
   - component: {fileID: 220719020}
   - component: {fileID: 220719019}
@@ -619,11 +626,16 @@ GameObject:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 188189024}
   - component: {fileID: 188189027}
   m_Layer: 0
   m_Name: cm
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -632,6 +644,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 --- !u!114 &220719019
@@ -704,6 +717,8 @@ Transform:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 --- !u!4 &188189024
 Transform:
   m_ObjectHideFlags: 3
@@ -732,6 +747,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1260,6 +1278,10 @@ GameObject:
   - component: {fileID: 744437581}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 744437583}
+>>>>>>> Stashed changes
 =======
   - component: {fileID: 744437583}
 >>>>>>> Stashed changes
@@ -1343,7 +1365,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -22.785921, y: 7.087511, z: -10}
+=======
+  m_LocalPosition: {x: -1.33, y: 3.45, z: -74.514046}
+>>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: -1.33, y: 3.45, z: -74.514046}
 >>>>>>> Stashed changes
@@ -1447,7 +1473,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 --- !u!82 &744437583
@@ -1548,6 +1577,9 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -2106,6 +2138,9 @@ GameObject:
   - component: {fileID: 1043605229}
   - component: {fileID: 1043605230}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -2313,6 +2348,9 @@ MonoBehaviour:
   CLiffCamera: {fileID: 0}
   CamLevel1View: {fileID: 1707941005}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -2875,6 +2913,9 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3238,9 +3279,13 @@ SceneRoots:
   - {fileID: 1043605228}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 220719021}
   - {fileID: 849666473}
   - {fileID: 644889189}
+=======
+  - {fileID: 1707941006}
+>>>>>>> Stashed changes
 =======
   - {fileID: 1707941006}
 >>>>>>> Stashed changes
