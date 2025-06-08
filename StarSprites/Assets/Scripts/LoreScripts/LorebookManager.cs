@@ -25,7 +25,7 @@ public class LorebookManager : MonoBehaviour
 
     public void UnlockLorePage(int pageNumber, string loreText)
     {
-        if (!unlockedLorePages.ContainsKey(pageNumber))
+        if (!unlockedLorePages.TryAdd(pageNumber, loreText))
         {
             unlockedLorePages[pageNumber] = loreText;
             PlayerPrefs.SetString(PlayerPrefsKey + pageNumber, loreText);

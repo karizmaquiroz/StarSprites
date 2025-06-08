@@ -2192,6 +2192,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 434128416268969119, guid: 8f92e4be9c3879647a7c9eac51f8eda1, type: 3}
+      propertyPath: furnitureItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fc289f4ee0d03446a32c70b81078942, type: 2}
     - target: {fileID: 5378725783694736083, guid: 8f92e4be9c3879647a7c9eac51f8eda1, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
       value: 0.5
@@ -2510,7 +2514,7 @@ Transform:
   m_GameObject: {fileID: 824556509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.221416, y: 18.230001, z: -10}
+  m_LocalPosition: {x: -18.184855, y: 18.230001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5912,7 +5916,7 @@ Transform:
   m_GameObject: {fileID: 1980307863}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.221416, y: 18.230001, z: -10}
+  m_LocalPosition: {x: -18.184855, y: 18.230001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6880,7 +6884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5912478426845238892, guid: 9fa41c2e08de2e04aad7f35b96719724, type: 3}
       propertyPath: nextSceneIndex
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6799583231266430791, guid: 9fa41c2e08de2e04aad7f35b96719724, type: 3}
       propertyPath: m_Sprite

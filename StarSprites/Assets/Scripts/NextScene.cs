@@ -52,7 +52,7 @@ public class NextScene : MonoBehaviour
                     break;
                 }
             }
-            Debug.Log(allEnemiesInactive);
+            //Debug.Log(allEnemiesInactive);
             if (allEnemiesInactive)
             {
                 var progress = SaveManager.Instance.currentData.levelProgress.Find(x => x.levelIndex == currentLevelIndex);

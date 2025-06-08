@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7883041346386484233}
   - component: {fileID: 434128416268969119}
   - component: {fileID: 5378725783694736083}
-  - component: {fileID: 8485619676284899736}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -102,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df824c50f424bf45b3c6d8fb0cbb74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  furnitureItem: {fileID: 11400000, guid: 4fc289f4ee0d03446a32c70b81078942, type: 2}
 --- !u!61 &5378725783694736083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,16 +148,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8485619676284899736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8104883568947930813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa88527cd43efec44a2f70ee4d4d94fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryIcon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}

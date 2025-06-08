@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -49,7 +50,7 @@ public class InventoryUI : MonoBehaviour
     }
 
     /// <summary>
-    /// Refreshes the inventory icons—and toggles each slot’s visibility.
+    /// Refreshes the inventory iconsï¿½and toggles each slotï¿½s visibility.
     /// </summary>
     public void RefreshUI()
     {
@@ -58,12 +59,8 @@ public class InventoryUI : MonoBehaviour
             // If there is an item at this index, show & set icon
             if (i < inventoryManager.inventoryItems.Count && inventoryManager.inventoryItems[i] != null)
             {
-                var itemGO = inventoryManager.inventoryItems[i];
-                var fi = itemGO.GetComponent<FurnitureItem>();
-                var icon = (fi != null && fi.inventoryIcon != null) ? fi.inventoryIcon : blankSprite;
-
                 inventorySlots[i].gameObject.SetActive(true);
-                inventorySlots[i].GetComponent<Image>().sprite = icon;
+                inventorySlots[i].GetComponent<Image>().sprite = inventoryManager.inventoryItems[i];
             }
             else
             {
